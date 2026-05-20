@@ -1,5 +1,6 @@
 .DS_Store
 *.bkp
+~$*
 node_modules/
 .expo/
 .expo-shared/
@@ -8,3 +9,6 @@ build/
 *.log
 .env
 .env.local
+
+# Local-only app code (not part of the deliverable repo)
+App/
