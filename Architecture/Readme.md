@@ -10,6 +10,8 @@ C4-style architecture diagrams for the PhysioAI senior project.
 |---|---|---|
 | `PhysioAI_Container.drawio` | All applications + data stores + users | C4 Level 2 — Container |
 | `PhysioAI_Component.drawio` | Internal components of the Mobile App | C4 Level 3 — Component |
+| `PhysioAI_AI-Flow.drawio` | 2-phase clean flow (Setup / Practice) | Supplementary — AI Data Flow |
+| `PhysioAI_AI-Flow-2.drawio` | 3-phase pipeline + Dashboard + AI type labels | Supplementary — AI + LLM mapping |
 
 ---
 
@@ -54,14 +56,14 @@ C4-style architecture diagrams for the PhysioAI senior project.
 **Controller Layer** (green)
 - Auth Manager
 - **Session Controller** (orchestrator)
-- Accessibility Mode Controller (5 modes)
+- Mode Controller (3 patient modes: Practice / Audio / Visual)
 
 **AI / Processing Layer** (amber)
 - Camera Module (Expo Camera)
 - Pose Detector (MediaPipe BlazePose + TFLite)
 - Angle Comparator (vs reference pose)
 - Thai TTS Engine (expo-speech)
-- Visual / Haptic Feedback (deaf-friendly)
+- Visual Feedback (deaf-friendly · overlay)
 
 **Data Access Layer** (pink)
 - Local Storage (AsyncStorage / offline)
@@ -154,7 +156,7 @@ In diagrams.net:
 
 - **AI runs on-device** (MediaPipe + TFLite) — no video uploaded to server → privacy + low latency + no GPU server cost
 - **Backend stores only keypoints + score**, not raw video
-- **Accessibility Mode Controller** is cross-cutting — it decides whether Session Controller sends events to TTS, Haptic, or Visual layer
+- **Accessibility Mode Controller** is cross-cutting — it decides whether Session Controller sends events to TTS or Visual layer
 - **WebSocket (Socket.io)** is used for: therapist notifications, real-time dashboard updates, live monitoring sessions
 - **Firebase Auth** is the only external dependency beyond hosting — chosen over custom auth for speed + security
 

@@ -61,7 +61,7 @@
         <mxCell id="fb-audio" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FF;strokeColor=#A855F7;fontSize=18;fontColor=#581C87;" value="&lt;b&gt;โหมด 4 · Audio-Only&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(88, 28, 135);&quot;&gt;ผู้พิการทางการเห็น (168K)&lt;/span&gt;&lt;br&gt;&lt;br&gt;TTS บรรยายท่า&lt;br&gt;+ Countdown เสียง&lt;br&gt;+ Alert เสียง — ไม่ต้องมองจอ" vertex="1">
           <mxGeometry height="160" width="380" x="760" y="895" as="geometry" />
         </mxCell>
-        <mxCell id="fb-visual" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7F3;strokeColor=#EC4899;fontSize=18;fontColor=#831843;" value="&lt;b&gt;โหมด 5 · Visual-Only&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(131, 24, 67);&quot;&gt;ผู้พิการทางการได้ยิน (441K)&lt;/span&gt;&lt;br&gt;&lt;br&gt;ลูกศร Overlay · สี Skeleton&lt;br&gt;+ ข้อความใหญ่&lt;br&gt;+ Vibration — ไม่ต้องพึ่งเสียง" vertex="1">
+        <mxCell id="fb-visual" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7F3;strokeColor=#EC4899;fontSize=18;fontColor=#831843;" value="&lt;b&gt;โหมด 5 · Visual-Only&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(131, 24, 67);&quot;&gt;ผู้พิการทางการได้ยิน (441K)&lt;/span&gt;&lt;br&gt;&lt;br&gt;ลูกศร Overlay · สี Skeleton&lt;br&gt;+ ข้อความใหญ่ + ไอคอน&lt;br&gt;— ไม่ต้องพึ่งเสียง" vertex="1">
           <mxGeometry height="160" width="380" x="1370" y="895" as="geometry" />
         </mxCell>
         <mxCell id="L5-label" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=18;fontStyle=1;fontColor=#94A3B8;letterSpacing=2;" value="LAYER 5 · BACKEND &amp;amp; DATA" vertex="1">
@@ -111,9 +111,6 @@
         </mxCell>
         <mxCell id="tech-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontSize=18;fontColor=#0F172A;" value="&lt;b style=&quot;color:#0F172A;&quot;&gt;Auth&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#334155;&quot;&gt;Firebase Auth&lt;/span&gt;" vertex="1">
           <mxGeometry height="70" width="300" x="1170" y="1585" as="geometry" />
-        </mxCell>
-        <mxCell id="tech-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CBD5E1;fontSize=18;fontColor=#0F172A;" value="&lt;b style=&quot;color:#0F172A;&quot;&gt;Haptic&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#334155;&quot;&gt;Vibration API&lt;/span&gt;" vertex="1">
-          <mxGeometry height="70" width="260" x="1510" y="1585" as="geometry" />
         </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="user-therapist" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#EF4444;strokeWidth=2;endArrow=classic;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=18;" target="mode1">
           <mxGeometry relative="1" as="geometry" />

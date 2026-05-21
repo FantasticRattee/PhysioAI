@@ -20,10 +20,10 @@
         <mxCell id="6" value="&lt;&lt;Person&gt;&gt;&lt;br&gt;&lt;b&gt;Therapist&lt;/b&gt;&lt;br&gt;นักกายภาพบำบัด" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#1E40AF;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#1E3A8A;align=center;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="1000" y="100" width="220" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="7" value="&lt;b&gt;Mobile App&lt;/b&gt;&lt;br&gt;[React Native + Expo]&lt;br&gt;&lt;br&gt;• 5 Modes (Setup / Practice / Dash / Audio / Visual)&lt;br&gt;• On-device BlazePose (offline-ready)&lt;br&gt;• Thai TTS · Bilingual (TH/EN)&lt;br&gt;• Session recording &amp; sync" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#065F46;strokeWidth=2;fontSize=13;fontColor=#064E3B;align=center;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+        <mxCell id="7" value="&lt;b&gt;Mobile App&lt;/b&gt;&lt;br&gt;[React Native + Expo]&lt;br&gt;&lt;br&gt;• 3 Patient Modes (Practice / Audio-Only / Visual-Only)&lt;br&gt;• On-device BlazePose (offline-ready)&lt;br&gt;• Thai TTS · Bilingual (TH/EN)&lt;br&gt;• Session recording &amp; sync" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#065F46;strokeWidth=2;fontSize=13;fontColor=#064E3B;align=center;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
           <mxGeometry x="100" y="240" width="380" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="8" value="&lt;b&gt;Web Dashboard&lt;/b&gt;&lt;br&gt;[React]&lt;br&gt;&lt;br&gt;• Therapist Dashboard (async review)&lt;br&gt;• BlazePose Reference Capture (primary)&lt;br&gt;• Session playback &amp; analytics&lt;br&gt;• Exercise Library Manager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0369A1;strokeWidth=2;fontSize=13;fontColor=#0C4A6E;align=center;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+        <mxCell id="8" value="&lt;b&gt;Web App&lt;/b&gt;&lt;br&gt;[React]&lt;br&gt;&lt;br&gt;• 2 Therapist Modes (Setup / Dashboard)&lt;br&gt;• BlazePose Reference Capture (primary)&lt;br&gt;• Session playback &amp; analytics&lt;br&gt;• Exercise Library Manager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0369A1;strokeWidth=2;fontSize=13;fontColor=#0C4A6E;align=center;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
           <mxGeometry x="920" y="240" width="380" height="170" as="geometry" />
         </mxCell>
         <mxCell id="9" value="&lt;b&gt;Backend API&lt;/b&gt;&lt;br&gt;[Node.js + Express + Socket.io]&lt;br&gt;&lt;br&gt;• REST API (auth, sessions, exercises)&lt;br&gt;• WebSocket (real-time notify)&lt;br&gt;• Business Logic Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FED7AA;strokeColor=#9A3412;strokeWidth=2;fontSize=13;fontColor=#7C2D12;align=center;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
@@ -41,29 +41,24 @@
         <mxCell id="13" value="Patient Practice / Audio / Visual" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#374151;strokeWidth=1.5;fontSize=11;fontColor=#374151;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="5" target="7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="14" value="primary (Dashboard +
-Reference Capture)" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#374151;strokeWidth=1.5;fontSize=11;fontColor=#374151;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="6" target="8">
+        <mxCell id="14" value="Dashboard + Reference Capture" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#374151;strokeWidth=1.5;fontSize=11;fontColor=#374151;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="6" target="8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="15" value="secondary (mobile Setup
-on the go)" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#9A3412;strokeWidth=1.5;fontSize=11;fontColor=#9A3412;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="6" target="7">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="16" value="REST + WebSocket
+        <mxCell id="15" value="REST + WebSocket
 [HTTPS/WSS]" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#1E40AF;strokeWidth=1.5;fontSize=11;fontColor=#1E40AF;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="7" target="9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="17" value="REST + WebSocket
+        <mxCell id="16" value="REST + WebSocket
 [HTTPS/WSS]" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#0369A1;strokeWidth=1.5;fontSize=11;fontColor=#0369A1;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="8" target="9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="18" value="verify JWT" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#6B21A8;strokeWidth=1.5;fontSize=11;fontColor=#6B21A8;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="9" target="10">
+        <mxCell id="17" value="verify JWT" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#6B21A8;strokeWidth=1.5;fontSize=11;fontColor=#6B21A8;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="9" target="10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="19" value="read/write" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#92400E;strokeWidth=1.5;fontSize=11;fontColor=#92400E;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="9" target="11">
+        <mxCell id="18" value="read/write" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#92400E;strokeWidth=1.5;fontSize=11;fontColor=#92400E;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="9" target="11">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="20" value="cache" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#92400E;strokeWidth=1.5;fontSize=11;fontColor=#92400E;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="9" target="12">
+        <mxCell id="19" value="cache" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#92400E;strokeWidth=1.5;fontSize=11;fontColor=#92400E;labelBackgroundColor=#FFFFFF;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" source="9" target="12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
