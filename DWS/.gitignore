@@ -1,0 +1,12 @@
+node_modules/
+.venv*/
+__pycache__/
+*.pyc
+artifacts/
+training/artifacts/
+data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/training_runs/*
+!data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/training_runs/left-tcn-v3/
+shared/models/*
+!shared/models/cust_dynamic_weight_shifts-left-tcn-v3/
+*.mlpackage/
+.DS_Store

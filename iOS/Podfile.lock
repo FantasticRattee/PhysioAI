@@ -1,0 +1,28 @@
+PODS:
+  - MediaPipeTasksCommon (0.10.35)
+  - MediaPipeTasksVision (0.10.35):
+    - MediaPipeTasksCommon (= 0.10.35)
+  - PhysioAIDynamicWeightShiftSDK (2.0.0):
+    - MediaPipeTasksVision (= 0.10.35)
+
+DEPENDENCIES:
+  - MediaPipeTasksVision (~> 0.10.35)
+  - PhysioAIDynamicWeightShiftSDK (from `./Modules/PhysioAIDynamicWeightShiftSDK`)
+
+SPEC REPOS:
+  trunk:
+    - MediaPipeTasksCommon
+    - MediaPipeTasksVision
+
+EXTERNAL SOURCES:
+  PhysioAIDynamicWeightShiftSDK:
+    :path: "./Modules/PhysioAIDynamicWeightShiftSDK"
+
+SPEC CHECKSUMS:
+  MediaPipeTasksCommon: ae27d88c4d185db114a1a768c504f8270dda79b5
+  MediaPipeTasksVision: 1d6c3efa89830a131dbd0dc4fb80dea283fac521
+  PhysioAIDynamicWeightShiftSDK: 45a70eee6d99e9f923653ee813b7cd77a52f9852
+
+PODFILE CHECKSUM: 0d0b028fce7f3c642e6c234d055b1442dea5c439
+
+COCOAPODS: 1.16.2

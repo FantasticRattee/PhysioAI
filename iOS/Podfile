@@ -1,0 +1,15 @@
+platform :ios, '17.0'
+
+project 'PhysioAINative.xcodeproj'
+
+install! 'cocoapods', :disable_input_output_paths => true
+
+target 'PhysioAINative' do
+  use_frameworks! :linkage => :static
+  pod 'MediaPipeTasksVision', '~> 0.10.35'
+  pod 'PhysioAIDynamicWeightShiftSDK', :path => './Modules/PhysioAIDynamicWeightShiftSDK'
+
+  target 'PhysioAINativeTests' do
+    inherit! :search_paths
+  end
+end

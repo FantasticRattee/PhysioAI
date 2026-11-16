@@ -1,0 +1,709 @@
+{
+  "modelVersion": "cust_dynamic_weight_shifts-left-tcn-v3",
+  "nativeBaselineCommit": "99252dda56dba8504024158a3387aa80f50b754d",
+  "preparedDate": "2026-10-29",
+  "datasetRecords": 122,
+  "frozenFeatureWindows": 1759,
+  "files": [
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_0090a800-e810-4019-bb57-6a650f6c27c7.json",
+      "bytes": 189689,
+      "sha256": "b94e843a17503447e711f09d962c6f43794f96376bad134c413c2c4af8883700"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_00c0a461-9c18-47ae-8461-e3eb87339722.json",
+      "bytes": 262421,
+      "sha256": "fd91ea48bf22f4cdc2cfbcd33057bad25ef13cba07fd0137be1c6fbdcfeb08da"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_0b9aabcb-8a3e-47d4-b9cd-8be0224e0e0c.json",
+      "bytes": 240554,
+      "sha256": "c0d799ff1531959f8716ca9f0103b40ca40f675284203521a32c175521fb5bdf"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_0e77d543-603e-48cc-984c-e1d8840ea4c5.json",
+      "bytes": 212680,
+      "sha256": "3136d803e840d4d057789d29df0cb27a372798b035b26f39dc76d40c9bc6737c"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_1a196e37-6f08-407f-a6a2-97de89a61287.json",
+      "bytes": 245331,
+      "sha256": "510a08fbad8b25103866be65a1ff26b0261235f9003a728036ce8fe442f31ccd"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_1b5da226-c06f-494a-8848-ef75893e6c8f.json",
+      "bytes": 174955,
+      "sha256": "710a375a82f988a1e5040b64bfbe569caadb5b39ac9ec883801443e983ccdf60"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_1e155441-4de2-410b-95a9-f1614e1feb95.json",
+      "bytes": 284166,
+      "sha256": "b4e4e059a83c09ab026281a0a4bb2e19b3388cf2a805b2fda387c8a3de0dcbe3"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_2369ff6e-3dc4-4dab-86a0-11908d250c0e.json",
+      "bytes": 235031,
+      "sha256": "4f5a326804fe7e7bf007e89aa21b66bc2a9716bc2fdfcea5317873c60f393664"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_2bfb3ca7-b726-47ea-acbe-ad8bd199a424.json",
+      "bytes": 317298,
+      "sha256": "4229f8edcb43b909b03b081ca4d77b20f41bf69c350e575a1432fa0aa86d16a8"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_2db1729c-65e9-4bad-b83f-2d62d00e685a.json",
+      "bytes": 180585,
+      "sha256": "202e5503aabe6c1c3fdbc67574b10be3c9bdbf5240f4de78a63150463135d2ee"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_2fae621c-db8f-45a0-a446-1d1e57d4ca17.json",
+      "bytes": 279087,
+      "sha256": "e206e89937b9958277cae0f34a47cb94f1e7156d3af4ba735924f021fc392626"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_333d262e-c8aa-463a-ad18-4e28c173544c.json",
+      "bytes": 167814,
+      "sha256": "60176d5842cb6b303c8ef41d35f7fd25c5b7a24c8da43dbe3844455a92e69209"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_3a055bd8-3f7c-401a-8c22-4b57ecbf104e.json",
+      "bytes": 333478,
+      "sha256": "4a4b27b830f69d0addf6b68f19376b8824557162850ebca689c93aa65ca542f3"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_3a35c6a7-8a32-48f9-9075-f0e62e599fd8.json",
+      "bytes": 102593,
+      "sha256": "d93175acbff58805d9d6ca7943ecf33f0a3c2450c6ac7cc3b0676cf42ae311ee"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_3c053324-8818-4dd7-9b99-0c7b492fe94a.json",
+      "bytes": 191230,
+      "sha256": "d4cf12e3b08f3ad8c8f99139f5524ce12b9ccf9db6a158357069d4e9a66c0e0c"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_3e4578ef-519f-4d6f-896f-3af6fddcdd8a.json",
+      "bytes": 185829,
+      "sha256": "22a64346e3c2f499fe0beb88c7bb1e93c2cf52db448810ab4072bd8835842bcc"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_3ebb06e7-2001-4add-826d-d2aa2d1766aa.json",
+      "bytes": 202396,
+      "sha256": "3e91086e0f98c8b746c5d613c908e9d39a47d63af9de56c2ff644e92a30bdc55"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_6f4ddb33-e70b-4a98-811d-ed179776233b.json",
+      "bytes": 196960,
+      "sha256": "2ea42c1b0a9bf2992ec5766d35f54a39a00147a76029c1a44328a76f5db0fada"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_7b99cc8d-5583-4bf7-8597-28dc8f2cdd98.json",
+      "bytes": 167773,
+      "sha256": "a6512597b0d6c348edc63a646d5fd133f153b5150617dcf3858c40ddc527e886"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_7d6b8f70-f83d-4511-ab32-652d71435b19.json",
+      "bytes": 283820,
+      "sha256": "f848e42ea34c76678a6399035491a66b6b337b4ff96d14146ec4846f95b34a04"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_7fc33f5e-82fb-4362-a1ab-24a440b8861b.json",
+      "bytes": 279057,
+      "sha256": "ce2fa617388ba4089f0ee69094aeba2a45c474b8383edaf44c416fbada0ec9fd"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_8246def4-ca4d-478a-b423-d5e7a29c8cad.json",
+      "bytes": 196870,
+      "sha256": "fbaea5dfeca99e042ea3addf57d37025c75542d7926b0b28c062fd9b4c446816"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_85928dd5-bf8f-482c-9853-82757c038271.json",
+      "bytes": 229628,
+      "sha256": "5d05c38b09c933e87f189a7047d5dbea136ec1cb9de599bad2b7c953c890dca4"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_8dfbc4d3-2622-4e50-a4af-99156f6a24ae.json",
+      "bytes": 185911,
+      "sha256": "a5720636e09ce020382ebff76847e4f614fd1fc916feb9d6934d8289df7c0f28"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_9188ccec-e81a-4e08-b3fb-8653d91435b8.json",
+      "bytes": 153159,
+      "sha256": "4445b676a32262ebe62705fe671e91e80ed1800ce9077faa32d7d33cb9b8626e"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_941af949-761b-4fda-a0b7-5f49155e7256.json",
+      "bytes": 185876,
+      "sha256": "49e6e47562c07b2492b3e9605ebe3e8b93a255263e87a8390b1edef87f5509a6"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_9b84a7bc-dc6f-4488-9d1c-b0c874c59c3d.json",
+      "bytes": 153112,
+      "sha256": "3a49bd4905b45e780cf535ac455779bdab62c4e2d816a9023ee00beef13fe188"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_a093b561-6fe1-4a58-a557-c743e924e156.json",
+      "bytes": 209008,
+      "sha256": "2d5e2980f96a95dffb3172b504f649b9f0a2afc851699cdcd92a490e2f5b4af6"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_a3b69973-adec-49d4-9bf9-d72c9a992d63.json",
+      "bytes": 254565,
+      "sha256": "570f6dc0ab232264367dd87c9ba917d1ebf3180b714d134789c6c107d085caba"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_aff8c53f-ed85-41a9-9279-4d70604eaeac.json",
+      "bytes": 289953,
+      "sha256": "956ea73ff39870242a6bdcbd462c33a8eec68945d5d05fd47e4b8108cc763e5d"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_b25be80e-6413-483f-a7a5-46476dce04de.json",
+      "bytes": 339010,
+      "sha256": "a750f76d57f711d73de2abd58521208ab37b82803a4ff4952ed615e4d516334d"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_b2ea749f-e924-4727-9630-51a1070e0eef.json",
+      "bytes": 198175,
+      "sha256": "ef0383a79ea54698ae54eb5868ed2850e0ec895fa9705cfced31328d89fd2472"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_b4cfa861-e76e-40a4-9c14-7495e14a3bfa.json",
+      "bytes": 232778,
+      "sha256": "815b4ab35ea4973e51d6ab33b71551d4df26b7b73e2755f3ea45d5866b8bbb24"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_b78442af-34fa-4d39-b908-1dd625149abe.json",
+      "bytes": 151345,
+      "sha256": "84ac606b834ee5dd984de6c8d0af18594bcf00fdaa338281391e0c39b4db1284"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_bd858bca-99e9-4dbd-b550-777eebb4a1a0.json",
+      "bytes": 214290,
+      "sha256": "b61023b2f2a7f1751dc043ca7c6dc3492fd3ee4171f346a61d47ac7b177b9555"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_be17842e-625c-44bb-80be-d662c43d4b84.json",
+      "bytes": 144734,
+      "sha256": "61987edc25f8e36c03075bee6dc2cb0a437efc0346e720b688c0b565c9e74a37"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_be700d84-43cf-4af1-916f-36ab3892192e.json",
+      "bytes": 328115,
+      "sha256": "dcf94198820b2fe83333facd84d073e344dea43ffdf43892d0268c06e62ef3b0"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_c309fbf1-2655-4bff-b75f-4c1f5d5bed8f.json",
+      "bytes": 169626,
+      "sha256": "6e36f43994a5a35cfcb0467b0142b130404ebe1ae2359f2c70f21ed18542bfa3"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_c902ba1d-4ef4-4c12-9c5e-7fd6426d9d63.json",
+      "bytes": 186008,
+      "sha256": "a7c75e9212f3792860c1ca43ea634b4567226d276f613e2177a6b00e623dd06a"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_cbfb5377-9171-449c-a4a7-34f5d93b0d22.json",
+      "bytes": 191557,
+      "sha256": "c37aa9101bf6282157c84da08f58585d58f8235c5f15c0d2c81024e9252bf68a"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_d0cebe20-b025-4ee7-bf41-0191bc1fefef.json",
+      "bytes": 169660,
+      "sha256": "d22291df6645e8fbc2b2609991c9d08a1d0ee896260d8817a4641df284a37c60"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_d709a3f2-702d-4806-ad6f-5594dd739a3e.json",
+      "bytes": 202429,
+      "sha256": "37ea6846376af61370bae249fc86737d5375a731fff0fecbd1463106f8c62907"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_d948b5fb-e55e-4b9e-826b-1d5f5821058e.json",
+      "bytes": 262525,
+      "sha256": "782637f09dd87fcf40f984f83fc274caa406a119a3e7e436c319900773f6f52a"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_de244e04-4a9d-440c-92c1-87bdd4d0b7ed.json",
+      "bytes": 211642,
+      "sha256": "c11c0b9011210b6a685a5d07c3c162af46f46998fd84fc26230bae400354c6c0"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_df4f98a2-2126-43eb-8c08-e75fb3abd042.json",
+      "bytes": 235642,
+      "sha256": "93251a49f6abfe71f6a34fd613e0b83f9b03035f7ad511d91f3dfc14a977d289"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_e902ef9d-dc65-4a5c-9553-3e9109f26762.json",
+      "bytes": 221914,
+      "sha256": "07e631cc045938e3c8e50960d904a6476844c8cdaae6771669f8272264362a83"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_eb97c701-ac53-4dc5-8c2f-17611fb50d51.json",
+      "bytes": 235236,
+      "sha256": "befca3738c3fdca1a2f3268359792d0edc6af3840eeddde7d96ebf0f5d0a79f8"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_ecdfb9e2-f126-42a6-9cb5-235c074d8ae1.json",
+      "bytes": 324373,
+      "sha256": "1a9f70668a3154adaf974c243124cc6421d1f79149de5c855423f7e6f45bbbdf"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_ed507ab8-02a8-49ed-9dc6-56d1893566fc.json",
+      "bytes": 153329,
+      "sha256": "af8459073d56dd98156c3253a5075e2011b5b583b6f88ab90e911087aaf2985d"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_f1e80cb6-d892-4a11-92d6-4c7791143def.json",
+      "bytes": 167463,
+      "sha256": "fac1d64cbaa2d0928af8851d52785b7258f179007584cf449a3e4faa8c87eea4"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_f3434fcc-cbc2-4c6f-ae54-34806001073c.json",
+      "bytes": 134916,
+      "sha256": "c46c2e4e265e28e6df479312295d7eb922a0f96ede0afd85a51bb02466cd6c5f"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_f4b78d06-0b34-4c8e-95d0-220bbc6d9291.json",
+      "bytes": 349770,
+      "sha256": "4bfc65517a56f81f8e8ce843bf6791e851b6c8364b619acc9b1ab2d3b2554e32"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_f8013338-f2e8-4ee1-bb99-5036a152168f.json",
+      "bytes": 326566,
+      "sha256": "6c89f85e74a1f6f0572709eba04e03d710fa01f21767770a3394ef7a4646337d"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_03d647ec487ac8465a0e.json",
+      "bytes": 175912,
+      "sha256": "cb883fb97b3c994760bf8d85d7c3e20be368c0b26a19503eea682c6cde83b9a4"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_06040067eab92b3e44bd.json",
+      "bytes": 187051,
+      "sha256": "678b21a56d6902865496bfdd2d211952a5053255af1e33a5fb13458c31bb7895"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_06f18d20547278b46bc7.json",
+      "bytes": 156409,
+      "sha256": "42a1cdd3ef2262662d830c5111709c2d69ac7f8603be1a40cb67fb3d378d7e2c"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_085500b7f24e5f56b9c9.json",
+      "bytes": 148626,
+      "sha256": "35eccfe1ff48b8c2f030f5e67f5939a20496f4080b859ed61e65855ace416ac1"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_0defc32ca469184b2ebf.json",
+      "bytes": 186727,
+      "sha256": "170c7e7de7427605f21d1ccda386b2978d0768885e78bdf1661cf3bd29a6367e"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_107df5083a3428e5191f.json",
+      "bytes": 196110,
+      "sha256": "ca7cf59329962c825c78e7c1f90982e053468761fd22bc9efa5639a528ac6044"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_10827225dd246c9889ae.json",
+      "bytes": 233920,
+      "sha256": "ba1d9ffb53c2a9371dd4f41a20bf79146ded258892c11501fbce493936670f73"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_12f76fa2b368b579083c.json",
+      "bytes": 152311,
+      "sha256": "349b16a4ab44412e7257c4543d94bd3b485373f4313ebf0ebcb573c3a2c0c358"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_187c8849726a51584aa9.json",
+      "bytes": 255822,
+      "sha256": "45d2c4492515acee8753cbb314322924f1921d6b713ebe345bb52aa21b0e13ad"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_1cc60a650920ebc62fbf.json",
+      "bytes": 307288,
+      "sha256": "289d8a054670c857f101c0b2bfeacaf7422003e97b3489f19edaf7c904a0e251"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_207b6d2252076569a58f.json",
+      "bytes": 181534,
+      "sha256": "fdbac86ef263ddb19d225ec7f7ad1ad0ddf2eb82cc4e71f09880ba2228e78a12"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_207bb88890c9c1b6a400.json",
+      "bytes": 165152,
+      "sha256": "7c07071f3d63ff7a74468ddb592d49b2251176d7d4f849b7e225a6322bc66190"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_26c301a1ebb7763ed92e.json",
+      "bytes": 213692,
+      "sha256": "0674e48d9fe293ff318900f39f1d730975405cd6b65b9ca689d154af89d97807"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_2de90d333087274ebf9f.json",
+      "bytes": 241684,
+      "sha256": "c40854560240551f9b203be5ffe2ed3326cb0674f7a8aeb075b2bcec4d83fb3b"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_2f062a30729898f79c33.json",
+      "bytes": 163457,
+      "sha256": "772baf01f8c627fc6afb8634a6d16f9c454deb5053a1de1cd248d6cdf55f7e62"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_32fb5bfe5aee1d3cdcaf.json",
+      "bytes": 136335,
+      "sha256": "b52cf011572b7926a79deacf8985209c6a5e812898cfd1f1960d8829026bc581"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_395883bf736f105a2269.json",
+      "bytes": 134990,
+      "sha256": "afc009a7fcfd73d3f6e60744d4ad2070fa6c303d7cc37757a8387cad2e4e550a"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_3e8e2c138ecd667c62c1.json",
+      "bytes": 141548,
+      "sha256": "12acee7de6a2e0a2145311f36b51cc0ef3f16748cc25137e65b7d68fc14cec98"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_409e3113798d9ea164a2.json",
+      "bytes": 213638,
+      "sha256": "029f7a2529af6fc8c9b2d0126298ab9e33ec643815389e53ea6cc67618e8f3b7"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_421ef1208972c3fcfda2.json",
+      "bytes": 263576,
+      "sha256": "1b6b427a78436fa5ac338e5720ea85da2af221a4e537f759ccc0c82d499906c8"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_44585f04c5d6e4460f1c.json",
+      "bytes": 186975,
+      "sha256": "d157bb739783711d919fd982679170bfc8dadb0f5d5c8a67e690aed2c7972022"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_47bc52fbe5a245a0966d.json",
+      "bytes": 159588,
+      "sha256": "1a77dc1425b33a61356de8013ea3fc744d6c0d3f667f123f4712b771b3e612f0"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_4dc7f88a57a6c28f7971.json",
+      "bytes": 168764,
+      "sha256": "cfcd328ef65334e046183d906e272fe6df92e37b81ff6a4a19448fb472944a79"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_4e0882f47fbd3ec9b354.json",
+      "bytes": 203395,
+      "sha256": "c9a58c67f682ea250588b7a2966907e8e72e8b27e35c736cd306a7095a101692"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_50e4335702e5032ce94e.json",
+      "bytes": 176131,
+      "sha256": "bc9c3cac938390da67676b9d8172dff3e073954a26e738cf6f1e826b5a25c543"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_53feb440f2c76d062601.json",
+      "bytes": 334631,
+      "sha256": "22136001864124562df1ed4373ac10a3f68e93ee9110d85602a88bad561edc01"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_5499500d4ce3ba9cbbff.json",
+      "bytes": 172459,
+      "sha256": "5b9f850fe309a294826911b105fcd3207f587955ec452d2f8fb8a0cd602abe5a"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_5b930207db3a8700297c.json",
+      "bytes": 262702,
+      "sha256": "4e56a08ce0671053ed6126e4a2ecec267736e4314f79f56f868230398407d76b"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_5f0917e5612f616563aa.json",
+      "bytes": 230171,
+      "sha256": "9f47a0384bea7a093dbebff52b964d567d9461501bce2a70ead08ef8cb8ae94a"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_6eb1fe6981b8d03c2974.json",
+      "bytes": 154507,
+      "sha256": "8c519f7321e1b163fa77e683e31ddcb8121ada9b974461919e2374604be6e6bc"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_707e4971aefb791561bd.json",
+      "bytes": 204481,
+      "sha256": "858561bd3dc811b1e128fb0a5cae74ae9117b1ea20abe937dc313ab0bdabd47c"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_722d03bc5c0acc2d5d53.json",
+      "bytes": 143437,
+      "sha256": "9d363d5c1fb387fdc33a211aa6d491ca8d12d69ca13e5b0c1a485fabcfc22f0e"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_7500caf152fb41cfe67d.json",
+      "bytes": 169102,
+      "sha256": "f4d3028ce2f73f68256e0dd2e1c461e248d6d73a6fee16cfc07981f83f7ceb2a"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_764a43b143008c1a56ba.json",
+      "bytes": 268974,
+      "sha256": "0a3e4d9396cc4b9bbb7e28bbd6c7ad7024623c839a508b3bf3910d297cb238c2"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_802739d27c1818c20bd7.json",
+      "bytes": 274530,
+      "sha256": "7c97b2b81cd62ed21e8fb602bbfd5131b43dfdf307b2a205d3a96ed9192167a2"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_8ce19adb612076d5f72e.json",
+      "bytes": 246810,
+      "sha256": "4e283cc9609b04413e17bee0b06ee449ef6c519107a065e35b42386f8fe9066b"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_8f10930f1242c8cb8b4a.json",
+      "bytes": 367034,
+      "sha256": "b57eafd6c620ea1cc61f21333c8240988f01a52a7173657299d685276c7fd49e"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_904450423e28281f091c.json",
+      "bytes": 197701,
+      "sha256": "85e0249db146f4438aab78934cb84c9a1d8c7746267d091ea6554a0e9e704e0e"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_92c576f06820ada5faa6.json",
+      "bytes": 168829,
+      "sha256": "636ebb7c73239b39a5d65bfb4d16f7deace5f0ee7fc03835c14fb57b500856fc"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_93007931822145a6bc35.json",
+      "bytes": 197749,
+      "sha256": "885361161b4a595c6036aee957c49328e8763e283788b39ab817957c17b76441"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_95410043c4cd9ac6f328.json",
+      "bytes": 198012,
+      "sha256": "a07e6093054065ad5d1c0c124bdb0276faff34027e761e859dcf3e792fe87354"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_95a6ca7107c2384931f4.json",
+      "bytes": 170653,
+      "sha256": "4a7a54476fe4b16efca36ea76bd883136149322f88e6464e66892181f9673176"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_97f2a7c7ec58516ab6c2.json",
+      "bytes": 154431,
+      "sha256": "da5e85a6513a4f818f98ccf8dfe6300764f7a8e718aefb7a64622e0dec8016fe"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_9d0bd881252a0599d178.json",
+      "bytes": 220650,
+      "sha256": "d373c5a913f5cbafc692cae3aa1d90f1f9b2359f93f55f62dd6af5213dccefdb"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_a1b111466a3ab99f6079.json",
+      "bytes": 367044,
+      "sha256": "37c4b6daec6fcead9d9450e65876ff7e4a040a95d8a7228c0b46b37deda55bfd"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_a2cf46139d8ecb18ae5e.json",
+      "bytes": 175835,
+      "sha256": "fce34d9c635d28d23451d2a1869dc304e39a5c10f112bc80cf19c0d2a590ff7f"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_a4666f43087a661412bd.json",
+      "bytes": 191206,
+      "sha256": "f41ed8fbbf5c07e1ec27ea6cb96099e30d4277e5e1898305bc3e92b67e480d38"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_a7ed461bd0476c4e8489.json",
+      "bytes": 340038,
+      "sha256": "ac51da5db5ce0a8cb43748c49f473a02855bcb449c0e9f3fb2af698720211ab4"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_adc4ce184c547eba54e8.json",
+      "bytes": 247324,
+      "sha256": "b834fdc414ceddf7e11d256c35421a79d9c8151321326a4dfbe17d9d86092e58"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_ba1a88719aacff36dfd0.json",
+      "bytes": 132302,
+      "sha256": "efc2225fa12ebda2f88a8f9bacc07e4b0882cc8f1b1c7ab3f5e6192fc5edfa43"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_bb9affe8576c50a30628.json",
+      "bytes": 274051,
+      "sha256": "2c638653a55758b131f39299140880f2e54e05174612b2031aa43f78915e418f"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_bfe149113033989a1f47.json",
+      "bytes": 241459,
+      "sha256": "cfcfffb107fd710e5c4d0ffd651e1de3afcb52159562e8263be0035eb7d0973f"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_c0f8481aa032cb51f16d.json",
+      "bytes": 175837,
+      "sha256": "5980f247a2e3e2f5dfcec882096c76f238a9320ea113f89b52632c251adb99b0"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_c3f82d980d229f8308e3.json",
+      "bytes": 203378,
+      "sha256": "51bbac19b00cd3ec2aac39ba5a9dbbb84677dbe5af04954a0856dbff1b9b3012"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_c57c1f48a14ccf4b49af.json",
+      "bytes": 263593,
+      "sha256": "69bdb3e2f323eed2cadeff7c255579c1170061be0902f18402474496f214530a"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_cad928c0f3861962e899.json",
+      "bytes": 268783,
+      "sha256": "84b01c425df1b85805ad60e15e4a9b9d6a222a8c238ba66ba9e7f21bc850d516"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_cbc1249ffb00b6dd2b18.json",
+      "bytes": 328852,
+      "sha256": "3a63e8a5a8fb98f711517e817ade5d3a29ad2b8f193f46196887fc7034046ed7"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_cd27d10cd9497294d6fc.json",
+      "bytes": 154075,
+      "sha256": "483b1cc0f0b4350ae9f5829e26bba7f39dfdee85785a5baf5434c83b49f1f8ad"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_d235f628fbeae933413b.json",
+      "bytes": 187082,
+      "sha256": "9b638337811aaec182c50c5c81edc9de732416b5bec6613521cf17825c26a5c7"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_d2a45bcdd7202b897a76.json",
+      "bytes": 307244,
+      "sha256": "9c0e0559cb37da1520c5f83fdd1b0383390d0c54d8687a7c0cdf5abde0192b4c"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_d30e1baebe7b1209f2ea.json",
+      "bytes": 154137,
+      "sha256": "c7f96594034ea8ceb973794e3e9470d72c5b594325060873df104aeeddd3debd"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_d42043fa37585d4f4284.json",
+      "bytes": 190682,
+      "sha256": "38cbe846c79998f72e5b81c51ebabf391f0a2be6c6c9b1b765e6685fc735c190"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_d54dc228d857ac0431a9.json",
+      "bytes": 196325,
+      "sha256": "b38ed7bf5711695f8ba829a510236f83cfba1b05e80a69de83cd441b91c25295"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_d97b742b0fc3e8d4f13f.json",
+      "bytes": 152800,
+      "sha256": "384bf56872063349917e992d66ddfe42baaf1982d3cf57ce52b333ce45754f01"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_e1b0ad10978a6d5d3206.json",
+      "bytes": 260910,
+      "sha256": "0dc7b535fde5c49f88269090c3410c86ae186623a168950ce03fce4f1b7aad04"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_ebc0303195b73c1f51d7.json",
+      "bytes": 170418,
+      "sha256": "ebe51969704c2c8b1788df68c2adcf498c57057fc5eafc2049cf2f0a69339fe7"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_ec495e3dbb4ea83c1ce6.json",
+      "bytes": 174191,
+      "sha256": "ed2ae9662cdd3da3fb1d900de4a5701a9a272c5f6d1176ef1dd52e53cee691f5"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_fb0ac6530dde0b1cde0a.json",
+      "bytes": 234225,
+      "sha256": "ce39c48ed1f82382d84f5ed80653550377644ffcbe3f4bbb7101726305aefc6e"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/ds_cust_dynamic_weight_shifts_syn_feb9f8f115b41ae86670.json",
+      "bytes": 204590,
+      "sha256": "9dcffaf8bf8f49f97b902174a48b9c26aea86c09592e4a57206d93065bef84c2"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/datasets/index.json",
+      "bytes": 814321,
+      "sha256": "3445d7bda7dd65566bfddce8ca2b4ca4fff30b535f4f41373ed9f7f71f952cfd"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/exercise.json",
+      "bytes": 2302,
+      "sha256": "d722962d6e0f5c380e253edc9f2c86f9e237a701a63b8f9656f8f148077a8c91"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/training_runs/left-tcn-v3/evaluation.json",
+      "bytes": 2783,
+      "sha256": "1eddcd2b099e65cbc9f3d9dc676fa70eb275a7c87da7d383052c241b049466e7"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/training_runs/left-tcn-v3/exercise.resolved.json",
+      "bytes": 2312,
+      "sha256": "e56db407ec3e95fa02d0d22d1c0f6b4fdcc6702871987549a002c092c5a47493"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/training_runs/left-tcn-v3/features.json",
+      "bytes": 25356186,
+      "sha256": "45749560217c2725ff02bd1003a693951877c252dc7da49876b7a9ec91ae2b8a"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/training_runs/left-tcn-v3/hybrid-evaluation.json",
+      "bytes": 1134,
+      "sha256": "30876f23f763269673f11ff6f8b37d2de0a4e31c545b79a251f6f1ce0cf2f0b1"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/training_runs/left-tcn-v3/motion-tcn-left-tcn-v3.best.keras",
+      "bytes": 385334,
+      "sha256": "b2cc50d531c31ae52293c496217200057ebc350c8424d7de325bd44e13e102b1"
+    },
+    {
+      "path": "data/local/exercises/dynamic_weight_shifts__cust_dynamic_weight_shifts/training_runs/left-tcn-v3/motion-tcn-left-tcn-v3.keras",
+      "bytes": 385333,
+      "sha256": "7e38f6af5aca104ed396a1317f9e19f3374a1c43d423d89ecb9ec42ec39dd147"
+    },
+    {
+      "path": "shared/models/cust_dynamic_weight_shifts-left-tcn-v3/evaluation.json",
+      "bytes": 2082,
+      "sha256": "e2c9d7bd11464cbd3294035282ea7a7e74f7910d71bcfdfde9bb3d9bc66f87d1"
+    },
+    {
+      "path": "shared/models/cust_dynamic_weight_shifts-left-tcn-v3/group1-shard1of1.bin",
+      "bytes": 69384,
+      "sha256": "4a0becb5d1b7c346975dca2b4adb476e9744ca2b39db3bdbcd8f539b80af3cf1"
+    },
+    {
+      "path": "shared/models/cust_dynamic_weight_shifts-left-tcn-v3/manifest.json",
+      "bytes": 5416,
+      "sha256": "ce66d3258873857e666453f6fe9ff5c49a5bb1b29f814cb284c5353c72e3e2c5"
+    },
+    {
+      "path": "shared/models/cust_dynamic_weight_shifts-left-tcn-v3/model.json",
+      "bytes": 116244,
+      "sha256": "433ea02e7f20c2db1da7d03aa299966ebcd000af68cdf6acbf7f44e68522102e"
+    },
+    {
+      "path": "../iOS/Modules/PhysioAIDynamicWeightShiftSDK/Resources/PhysioAIDynamicWeightShiftTCN.mlmodelc/analytics/coremldata.bin",
+      "bytes": 243,
+      "sha256": "9558eeeb826624ee25c01f43483d486cad108753f94a3db34bee9b4c134c4788"
+    },
+    {
+      "path": "../iOS/Modules/PhysioAIDynamicWeightShiftSDK/Resources/PhysioAIDynamicWeightShiftTCN.mlmodelc/coremldata.bin",
+      "bytes": 728,
+      "sha256": "6ac265edacc7decc489cf8d7f73ce8b4ba1217cce9539f230d0bde25a91efcd0"
+    },
+    {
+      "path": "../iOS/Modules/PhysioAIDynamicWeightShiftSDK/Resources/PhysioAIDynamicWeightShiftTCN.mlmodelc/metadata.json",
+      "bytes": 2734,
+      "sha256": "9c14b86c8a8d4dc7403e78905a7045405f708525e3d3cf893bf052b0a5bb0df9"
+    },
+    {
+      "path": "../iOS/Modules/PhysioAIDynamicWeightShiftSDK/Resources/PhysioAIDynamicWeightShiftTCN.mlmodelc/model.mil",
+      "bytes": 116596,
+      "sha256": "15473ddca1cc453527ee33b3e4769823c5808925a96618d00fa367f3566955b4"
+    },
+    {
+      "path": "../iOS/Modules/PhysioAIDynamicWeightShiftSDK/Resources/PhysioAIDynamicWeightShiftTCN.mlmodelc/weights/weight.bin",
+      "bytes": 71616,
+      "sha256": "b4ba1c691db0c77ebebb40b98c25d3574eab14fd08d8ab8f3c5712ff9cf6a239"
+    },
+    {
+      "path": "../iOS/Modules/PhysioAIDynamicWeightShiftSDK/Resources/dws_manifest.json",
+      "bytes": 5416,
+      "sha256": "ce66d3258873857e666453f6fe9ff5c49a5bb1b29f814cb284c5353c72e3e2c5"
+    }
+  ]
+}

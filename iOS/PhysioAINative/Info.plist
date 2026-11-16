@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>8.0.17</string>
+	<key>CFBundleVersion</key>
+	<string>17</string>
+	<key>CFBundleDisplayName</key>
+	<string>PhysioAI App V8.0.17 Combination V1 + DWS Experimental</string>
+	<key>CFBundleName</key>
+	<string>PhysioAINative</string>
+	<key>PHYSIOAI_API_BASE_URL</key>
+	<string>$(PHYSIOAI_API_BASE_URL)</string>
+	<key>SUPABASE_URL</key>
+	<string>$(SUPABASE_URL)</string>
+	<key>SUPABASE_PUBLISHABLE_KEY</key>
+	<string>$(SUPABASE_PUBLISHABLE_KEY)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>PhysioAI uses the camera for exercise analysis, private session recordings reviewed by your assigned therapist, and video calls.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>PhysioAI uses the microphone for calls with your assigned therapist.</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchBackground</string>
+	</dict>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+</dict>
+</plist>

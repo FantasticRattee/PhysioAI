@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://physioai.local/schemas/rule-based-sit-to-stand-session-v1.json",
+  "title": "PhysioAI Rule-Based Sit-to-Stand Session",
+  "description": "Local derived Sit-to-Stand repetition evidence. It excludes raw video, raw landmarks, pixel coordinates, and patient identifiers. Rule thresholds are experimental visible-form checks, not clinical cut-offs.",
+  "type": "object",
+  "required": ["schema", "moduleID", "moduleVersion", "exerciseID", "trackingProfile", "anatomicalSide", "decisionScope", "summary", "repetitions", "claimBoundary"],
+  "properties": {
+    "schema": { "const": "physioai.rule_based_sit_to_stand_session.v1" },
+    "moduleID": { "const": "sit_to_stand_rule_based_evidence_v1" },
+    "moduleVersion": { "type": "string" },
+    "exerciseID": { "const": "sit_to_stand" },
+    "trackingProfile": { "const": "pose_only" },
+    "anatomicalSide": { "const": "bilateral" },
+    "decisionScope": { "const": "experimental_rule_based_visible_form" },
+    "summary": { "$ref": "#/$defs/summary" },
+    "repetitions": { "type": "array", "items": { "$ref": "#/$defs/repetition" } },
+    "claimBoundary": { "$ref": "#/$defs/claimBoundary" }
+  },
+  "$defs": {
+    "summary": {
+      "type": "object",
+      "required": ["totalReps", "correctRepCount", "incorrectRepCount", "cannotAssessRepCount", "incompleteRepCount", "wrongByBodyRegion", "wrongBySeverity"],
+      "properties": {
+        "totalReps": { "type": "integer", "minimum": 0 },
+        "correctRepCount": { "type": "integer", "minimum": 0 },
+        "incorrectRepCount": { "type": "integer", "minimum": 0 },
+        "cannotAssessRepCount": { "type": "integer", "minimum": 0 },
+        "incompleteRepCount": { "type": "integer", "minimum": 0 },
+        "wrongByBodyRegion": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "wrongBySeverity": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+      },
+      "additionalProperties": false
+    },
+    "repetition": {
+      "type": "object",
+      "required": ["id", "repIndex", "outcome", "faultTags", "bodyRegions", "severity", "assessableFrameCount", "skippedFrameCount", "skippedReasonCounts", "faultSignals"],
+      "properties": {
+        "id": { "type": "string" },
+        "repIndex": { "type": "integer", "minimum": 1 },
+        "outcome": { "enum": ["correct", "incorrect", "cannot_assess", "incomplete"] },
+        "faultTags": { "type": "array", "items": { "enum": ["trunk_view_plane_tilt", "trunk_lateral_offset", "hip_left_right_asymmetry", "knee_left_right_asymmetry", "foot_base_offset"] } },
+        "bodyRegions": { "type": "array", "items": { "enum": ["trunk", "left_hip", "right_hip", "left_knee", "right_knee", "left_foot", "right_foot"] } },
+        "severity": { "type": ["string", "null"], "enum": ["low", "medium", "high", null] },
+        "assessableFrameCount": { "type": "integer", "minimum": 0 },
+        "skippedFrameCount": { "type": "integer", "minimum": 0 },
+        "skippedReasonCounts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "faultSignals": { "type": "array", "items": { "$ref": "#/$defs/signal" } }
+      },
+      "additionalProperties": false
+    },
+    "signal": {
+      "type": "object",
+      "required": ["kind", "semanticID", "bodyRegion", "landmarkRefs", "metric", "severity", "confidence", "sourceEngine"],
+      "properties": {
+        "kind": { "const": "fault_observation" },
+        "semanticID": { "enum": ["trunk_view_plane_tilt", "trunk_lateral_offset", "hip_left_right_asymmetry", "knee_left_right_asymmetry", "foot_base_offset"] },
+        "bodyRegion": { "enum": ["trunk", "left_hip", "right_hip", "left_knee", "right_knee", "left_foot", "right_foot"] },
+        "landmarkRefs": { "type": "array", "maxItems": 0 },
+        "metric": { "type": "object", "required": ["name", "value", "unit"], "additionalProperties": false, "properties": { "name": { "type": "string" }, "value": { "type": "number" }, "unit": { "enum": ["degrees", "torso_scale"] } } },
+        "severity": { "enum": ["low", "medium", "high"] },
+        "confidence": { "const": 1 },
+        "sourceEngine": { "const": "sit_to_stand_rule_based_evidence_v1" }
+      },
+      "additionalProperties": false
+    },
+    "claimBoundary": {
+      "type": "object",
+      "required": ["experimental", "clinicalDecision", "patientFacingApproved", "rawMediaPersisted", "rawLandmarksPersisted"],
+      "properties": {
+        "experimental": { "const": true },
+        "clinicalDecision": { "const": false },
+        "patientFacingApproved": { "const": false },
+        "rawMediaPersisted": { "const": false },
+        "rawLandmarksPersisted": { "const": false }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

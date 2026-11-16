@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-29",
+  "native_baseline_commit": "99252dda56dba8504024158a3387aa80f50b754d",
+  "node_tests": {
+    "passed": 24,
+    "failed": 0
+  },
+  "asset_verification": {
+    "files": 140,
+    "dataset_records": 122,
+    "frozen_feature_windows": 1759
+  },
+  "current_dataset_feature_build": {
+    "records": 122,
+    "selected_records": 110,
+    "windows": 1994,
+    "input_shape": [
+      30,
+      23
+    ]
+  },
+  "training_smoke": {
+    "epochs": 1,
+    "completed": true,
+    "replaced_shipped_weights": false
+  },
+  "keras_heldout_evaluation": {
+    "sampleCount": 33,
+    "qualitySampleCount": 26,
+    "stablePhaseSampleCount": 21,
+    "transitionPhaseSampleCount": 12,
+    "evaluatedSplit": "test",
+    "phaseAccuracy": 0.9090909090909091,
+    "phaseMacroF1": 0.8811524609843937,
+    "stablePhaseAccuracy": 1.0,
+    "stablePhaseMacroF1": 1.0,
+    "qualityDecisionThreshold": 0.5,
+    "qualityAccuracy": 1.0,
+    "qualityMacroF1": 1.0,
+    "perLabelRecall": {
+      "correct_left": 1.0,
+      "wrong_left": 1.0
+    },
+    "perLabelQualityMetrics": {
+      "correct_left": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 14
+      },
+      "wrong_left": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 12
+      }
+    },
+    "falseGoodRate": 0.0,
+    "phaseConfusionMatrix": {
+      "rest": {
+        "rest": 7,
+        "target": 0
+      },
+      "target": {
+        "rest": 3,
+        "target": 23
+      }
+    },
+    "stablePhaseConfusionMatrix": {
+      "rest": {
+        "rest": 7,
+        "target": 0
+      },
+      "target": {
+        "rest": 0,
+        "target": 14
+      }
+    },
+    "qualityConfusionMatrix": {
+      "correct_left": {
+        "correct_left": 14,
+        "wrong_left": 0
+      },
+      "wrong_left": {
+        "correct_left": 0,
+        "wrong_left": 12
+      }
+    },
+    "rawArgmaxQuality": {
+      "accuracy": 1.0,
+      "macroF1": 1.0,
+      "perLabelRecall": {
+        "correct_left": 1.0,
+        "wrong_left": 1.0
+      },
+      "falseGoodRate": 0.0,
+      "confusionMatrix": {
+        "correct_left": {
+          "correct_left": 14,
+          "wrong_left": 0
+        },
+        "wrong_left": {
+          "correct_left": 0,
+          "wrong_left": 12
+        }
+      }
+    }
+  },
+  "bundled_coreml_parity": {
+    "ok": true,
+    "split": "test",
+    "samples": 33,
+    "kerasCoreMLWorstMaxAbsDelta": 6.258487701416016e-07,
+    "tolerance": 0.015,
+    "phaseAccuracy": 0.9090909090909091,
+    "stablePhaseAccuracy": 1.0,
+    "formAccuracyAtTarget": 1.0,
+    "wrongFormSamples": 12,
+    "falseGoodCount": 0
+  },
+  "exported_coreml_parity": {
+    "ok": true,
+    "split": "test",
+    "samples": 33,
+    "kerasCoreMLWorstMaxAbsDelta": 0.008106410503387451,
+    "tolerance": 0.015,
+    "phaseAccuracy": 0.9090909090909091,
+    "stablePhaseAccuracy": 1.0,
+    "formAccuracyAtTarget": 1.0,
+    "wrongFormSamples": 12,
+    "falseGoodCount": 0
+  },
+  "tfjs_export_and_evaluation": {
+    "completed": true,
+    "clean_environment_export_completed": true,
+    "sampleCount": 33
+  },
+  "python_syntax_files": 14,
+  "environment": {
+    "node": "24.16.0",
+    "python": "3.12.14",
+    "platform": "macOS arm64 CPU",
+    "packages": {
+      "tensorflow": "2.17.1",
+      "keras": "3.15.0",
+      "numpy": "1.26.4",
+      "coremltools": "8.3.0",
+      "jax": "0.4.34",
+      "jaxlib": "0.4.34",
+      "scipy": "1.14.1",
+      "tensorflowjs": "4.22.0"
+    }
+  }
+}

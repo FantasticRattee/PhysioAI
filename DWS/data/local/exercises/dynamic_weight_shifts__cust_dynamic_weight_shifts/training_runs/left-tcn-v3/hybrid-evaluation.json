@@ -1,0 +1,56 @@
+{
+  "schema": "physioai.hybrid_target_evaluation.v1",
+  "modelVersion": "cust_dynamic_weight_shifts-left-tcn-v3",
+  "validationOnly": true,
+  "evaluatedSplit": "test",
+  "sampleCount": 33,
+  "targetJoint": null,
+  "targetThreshold": null,
+  "targetRules": [],
+  "mode": "binary_form_screen_left",
+  "repCount": 2,
+  "phase": {
+    "sampleCount": 33,
+    "accuracy": 0.9090909090909091,
+    "perLabelRecall": {
+      "rest": 1,
+      "target": 0.8846153846153846
+    },
+    "confusionMatrix": {
+      "rest": {
+        "rest": 7,
+        "target": 0
+      },
+      "target": {
+        "rest": 3,
+        "target": 23
+      }
+    }
+  },
+  "quality": {
+    "sampleCount": 26,
+    "accuracy": 1,
+    "perLabelRecall": {
+      "correct_left": 1,
+      "wrong_left": 1
+    },
+    "confusionMatrix": {
+      "correct_left": {
+        "correct_left": 14,
+        "wrong_left": 0
+      },
+      "wrong_left": {
+        "correct_left": 0,
+        "wrong_left": 12
+      }
+    }
+  },
+  "approval": {
+    "ok": true,
+    "criteria": {
+      "phaseAccuracy": 0.9,
+      "qualityAccuracy": 0.85,
+      "everyClassRecallAboveZero": true
+    }
+  }
+}

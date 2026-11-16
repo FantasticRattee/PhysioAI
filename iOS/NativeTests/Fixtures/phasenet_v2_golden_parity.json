@@ -1,0 +1,160 @@
+{
+  "schema": "physioai.bottle_grab_phasenet_v2_browser_parity.v1",
+  "evaluationRole": "runtime_numeric_parity_only",
+  "modelPerformanceEvidence": false,
+  "trainingPerformed": false,
+  "modelId": "bottlegrab_posehand_phasenet_v2_same_lineage_video_expansion_train_only",
+  "sourceHashes": {
+    "modelSha256": "020927a826c2d6e30efc791fe6b7b3ef95dd185bf6d25328617e7d7a1bbc7367",
+    "manifestSha256": "b76ed8f8a9d37e09c00254fbd28b40aef81c040e1ed03ad04f6d7a03bdb56669",
+    "contractSha256": "5e1a91b0fc0522e76e4d51b3d8ca483215ac9a68d461ac3d37baefde79c1672c"
+  },
+  "modelGraphSha256": "35b38a9e7ce95390b5bfb71ce90cd2f92b4d939388612247aba49585e71a5742",
+  "browserRuntimeContractSha256": "6270c54c3750ad42138ffe5e94b30b8c6165a284873d3a9368aa9aa4e3f05ab6",
+  "browserWeightSha256": "b522a4e5f705594ccdfc400d24b11cc87677f39961698f95a63dfddcb1e1fd43",
+  "browserRuntimeSha256": "b813e37aa5cb82e89efeba72d1ef5025c168384ee650c352345651a935dd64a8",
+  "goldenInputsSha256": "aee68b0fe1379fef789991f62457edbd4ad2944d63bb8e4c1b57f3676792823d",
+  "inputShape": [
+    30,
+    20
+  ],
+  "classOrder": [
+    "start_or_rest",
+    "reach",
+    "preshape",
+    "grasp",
+    "release",
+    "return"
+  ],
+  "featureOrder": [
+    "pose_elbow_flexion_norm",
+    "pose_wrist_rel_shoulder_x_arm",
+    "pose_wrist_rel_shoulder_y_arm",
+    "pose_coarse_hand_centroid_rel_wrist_x_arm",
+    "pose_coarse_hand_centroid_rel_wrist_y_arm",
+    "pose_elbow_flexion_delta",
+    "pose_wrist_rel_shoulder_x_delta",
+    "pose_wrist_rel_shoulder_y_delta",
+    "pose_coarse_hand_centroid_rel_wrist_x_delta",
+    "pose_coarse_hand_centroid_rel_wrist_y_delta",
+    "hand_thumb_mcp_flexion_norm",
+    "hand_thumb_ip_flexion_norm",
+    "hand_index_mcp_flexion_norm",
+    "hand_index_pip_flexion_norm",
+    "hand_index_dip_flexion_norm",
+    "hand_mean_finger_flexion_norm",
+    "hand_thumb_index_aperture_palm_ratio",
+    "hand_thumb_index_aperture_delta",
+    "hand_mean_finger_flexion_delta",
+    "hand_index_pip_flexion_delta"
+  ],
+  "absoluteTolerance": 1e-06,
+  "maxAbsoluteError": 2.1845844611068088e-07,
+  "allArgmaxMatch": true,
+  "fixtures": [
+    {
+      "id": "zeros",
+      "kerasProbabilities": [
+        0.10352116823196411,
+        0.14414231479167938,
+        0.23388822376728058,
+        0.2987748682498932,
+        0.1283174455165863,
+        0.09135591983795166
+      ],
+      "browserProbabilities": [
+        0.10352117964584538,
+        0.14414231515367132,
+        0.23388822691308234,
+        0.2987749030706757,
+        0.1283174527874248,
+        0.09135592242930059
+      ],
+      "kerasArgmaxIndex": 3,
+      "browserArgmaxIndex": 3,
+      "argmaxMatch": true,
+      "maxAbsoluteError": 3.482078253513876e-08
+    },
+    {
+      "id": "linear",
+      "kerasProbabilities": [
+        0.0030061386059969664,
+        0.0027767750434577465,
+        0.8984049558639526,
+        0.03412264585494995,
+        0.060978490859270096,
+        0.0007110940641723573
+      ],
+      "browserProbabilities": [
+        0.0030061450326124184,
+        0.0027767783174781273,
+        0.898404737797687,
+        0.034122665002722694,
+        0.060978578462315185,
+        0.0007110953871847117
+      ],
+      "kerasArgmaxIndex": 2,
+      "browserArgmaxIndex": 2,
+      "argmaxMatch": true,
+      "maxAbsoluteError": 2.1806626560039177e-07
+    },
+    {
+      "id": "oscillating",
+      "kerasProbabilities": [
+        0.008169527165591717,
+        0.9151927828788757,
+        0.0451887771487236,
+        0.026277074590325356,
+        0.004859873093664646,
+        0.0003120528708677739
+      ],
+      "browserProbabilities": [
+        0.008169567478842349,
+        0.9151925644204296,
+        0.045188816300458345,
+        0.02627711795795099,
+        0.004859879204422252,
+        0.0003120546378962009
+      ],
+      "kerasArgmaxIndex": 1,
+      "browserArgmaxIndex": 1,
+      "argmaxMatch": true,
+      "maxAbsoluteError": 2.1845844611068088e-07
+    },
+    {
+      "id": "seeded_20260815",
+      "kerasProbabilities": [
+        0.002531813457608223,
+        0.0018282878445461392,
+        0.7754718661308289,
+        0.21685907244682312,
+        0.0027300824876874685,
+        0.0005788951530121267
+      ],
+      "browserProbabilities": [
+        0.002531811904424818,
+        0.0018282862545242846,
+        0.7754719038942662,
+        0.21685902129991572,
+        0.002730081640057518,
+        0.0005788950068115978
+      ],
+      "kerasArgmaxIndex": 2,
+      "browserArgmaxIndex": 2,
+      "argmaxMatch": true,
+      "maxAbsoluteError": 5.114690740382066e-08
+    }
+  ],
+  "runtime": {
+    "keras": "3.15.1",
+    "python": "3.12.13",
+    "tensorflow": "2.16.2"
+  },
+  "browserEngine": "dependency_free_es_module_float32_weights",
+  "claimBoundary": [
+    "not_accuracy_or_f1",
+    "not_validation_or_generalization",
+    "not_form_quality_or_correctness",
+    "phase_probabilities_only"
+  ]
+}

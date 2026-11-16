@@ -1,0 +1,31 @@
+{
+  "schema": "physioai.bottle_grab_v7_ai_module.v1",
+  "moduleId": "bottle_grab_v7_ai_module",
+  "moduleVersion": "1.1.0-dev",
+  "baselineId": "bottle_grab_native_v7_ai_module_baseline_5",
+  "baselineNumber": 5,
+  "baselineVersion": "app-v7-bottle-detector-pose-proximity-0.1.0-dev",
+  "baselineStatus": "frozen_development_baseline",
+  "baselineScope": "native_ios_local_device_integration_only",
+  "exerciseId": "bottle_grab",
+  "decisionScope": "experimental_local_device_proximity_only",
+  "engines": [
+    "bottle_grab_v7_bottle_detector",
+    "bottle_grab_v7_stable_bottle_anchor_v1",
+    "mediapipe_pose_full_v1",
+    "mediapipe_hand_landmarker_secondary_v1",
+    "pose_hand_proxy_v1",
+    "bottle_grab_v7_pose_proximity_counter_v1",
+    "hand_finger_quality_comment_v1",
+    "bottle_grab_phasenet_v2_context_v1"
+  ],
+  "entryPoint": "NativeBottleGrabV7AIModule",
+  "runtime": "native_ios_swift_avfoundation_mediapipe_tasks_vision",
+  "counterAuthority": "bottle_grab_v7_pose_proximity_counter_v1",
+  "phaseAuthority": "none_context_only",
+  "handAuthority": "finger_comment_only",
+  "cloudInference": false,
+  "patientFacingApproved": false,
+  "clinicalApproved": false,
+  "rollback": "App V6.1 via build without --native-app-v7-bottle-detector"
+}

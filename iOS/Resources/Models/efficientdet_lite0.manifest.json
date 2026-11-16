@@ -1,0 +1,14 @@
+{
+  "schema": "physioai.app_v7.bottle_detector_asset.v1",
+  "asset": "efficientdet_lite0.tflite",
+  "source": "https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/float32/1/efficientdet_lite0.tflite",
+  "sha256": "40338edf5ec70d43e318b0a716a84d4564cd1802759a7a07170c7e43796dbf58",
+  "runtime": "MediaPipeTasksVision.ObjectDetector",
+  "runningMode": "liveStream",
+  "labelAllowlist": ["bottle"],
+  "status": "experimental_generic_coco_baseline",
+  "roboflowReplacement": "pending_training_export",
+  "rawFramesPersisted": false,
+  "cloudInference": false,
+  "deployment": "App-V5 native iOS local debug flag only"
+}

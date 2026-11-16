@@ -1,0 +1,44 @@
+{
+  "schema": "physioai.sit_to_stand.phasenet_v1.native_contract.v1",
+  "modelId": "sit_to_stand_phasenet_v1_train_only",
+  "status": "experimental-train-only-native-export",
+  "appIntegrationAuthorized": false,
+  "input": {
+    "shape": [30, 30],
+    "dtype": "float32",
+    "byteOrder": "little-endian",
+    "layout": "row-major-C",
+    "featureNormalization": "pelvis_torso_scale_view_relative.v1",
+    "runtimeAcceptsLabel": false,
+    "missingFeaturePolicy": "reject_cannot_assess_no_imputation"
+  },
+  "architecture": {
+    "type": "causal_tcn_three_dilations_global_pooling",
+    "convFilters": 24,
+    "kernelSize": 3,
+    "dilations": [1, 2, 4],
+    "padding": "causal",
+    "residualProjection": "1x1_same",
+    "pooling": "global_average_pooling_1d"
+  },
+  "output": {
+    "shape": [4],
+    "dtype": "float32",
+    "activation": "softmax",
+    "classOrder": ["seated_rest", "rise", "standing_hold", "lower"],
+    "argmaxPolicy": "highest_probability_index"
+  },
+  "weightSerialization": {
+    "oneFilePerTensor": true,
+    "dtype": "float32",
+    "byteOrder": "little-endian",
+    "layout": "row-major-C",
+    "pathPattern": "artifacts/weights/<layer>__<index>.f32"
+  },
+  "upstreamBoundary": {
+    "detector": "MediaPipe Pose 33 landmarks, separate module",
+    "captureQc": "separate module",
+    "repetitionCounter": "parallel geometry counter, separate module",
+    "commentEngine": "separate model-owned layer"
+  }
+}

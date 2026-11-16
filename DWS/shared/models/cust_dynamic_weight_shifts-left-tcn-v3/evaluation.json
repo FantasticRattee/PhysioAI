@@ -1,0 +1,97 @@
+{
+  "evaluation": {
+    "sampleCount": 33,
+    "qualitySampleCount": 26,
+    "stablePhaseSampleCount": 21,
+    "transitionPhaseSampleCount": 12,
+    "evaluatedSplit": "test",
+    "phaseAccuracy": 0.9090909090909091,
+    "phaseMacroF1": 0.8811524609843937,
+    "stablePhaseAccuracy": 1.0,
+    "stablePhaseMacroF1": 1.0,
+    "qualityDecisionThreshold": 0.5,
+    "qualityAccuracy": 1.0,
+    "qualityMacroF1": 1.0,
+    "perLabelRecall": {
+      "correct_left": 1.0,
+      "wrong_left": 1.0
+    },
+    "perLabelQualityMetrics": {
+      "correct_left": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 14
+      },
+      "wrong_left": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 12
+      }
+    },
+    "falseGoodRate": 0.0,
+    "phaseConfusionMatrix": {
+      "rest": {
+        "rest": 7,
+        "target": 0
+      },
+      "target": {
+        "rest": 3,
+        "target": 23
+      }
+    },
+    "stablePhaseConfusionMatrix": {
+      "rest": {
+        "rest": 7,
+        "target": 0
+      },
+      "target": {
+        "rest": 0,
+        "target": 14
+      }
+    },
+    "qualityConfusionMatrix": {
+      "correct_left": {
+        "correct_left": 14,
+        "wrong_left": 0
+      },
+      "wrong_left": {
+        "correct_left": 0,
+        "wrong_left": 12
+      }
+    },
+    "rawArgmaxQuality": {
+      "accuracy": 1.0,
+      "macroF1": 1.0,
+      "perLabelRecall": {
+        "correct_left": 1.0,
+        "wrong_left": 1.0
+      },
+      "falseGoodRate": 0.0,
+      "confusionMatrix": {
+        "correct_left": {
+          "correct_left": 14,
+          "wrong_left": 0
+        },
+        "wrong_left": {
+          "correct_left": 0,
+          "wrong_left": 12
+        }
+      }
+    }
+  },
+  "approval": {
+    "ok": true,
+    "issues": [],
+    "criteria": {
+      "phaseAccuracy": 0.9,
+      "qualityAccuracy": 0.85,
+      "qualityMacroF1": 0.75,
+      "perLabelRecall": 0.75,
+      "falseGoodRate": 0.05,
+      "targetBoundaryConfidentRecall": 0.85,
+      "targetBoundaryFalseReachedRate": 0.1
+    }
+  }
+}

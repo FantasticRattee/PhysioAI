@@ -1,0 +1,174 @@
+name: PhysioAINative
+
+options:
+  # Public template: each cloner supplies their own reverse-DNS bundle prefix.
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+
+packages:
+  Supabase:
+    url: https://github.com/supabase/supabase-swift
+    exactVersion: 2.55.1
+  WebRTC:
+    url: https://github.com/stasel/WebRTC.git
+    # 151.0.x cannot resolve its removed upstream binary. 152.0.0 is the
+    # approved local build repair; source and runtime verification remain
+    # separate from the V8.0.12 AI port tests.
+    exactVersion: 152.0.0
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    # Select your own Apple Development Team in Xcode before building to a device.
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+
+targets:
+  PhysioAINative:
+    type: application
+    platform: iOS
+    sources:
+      - path: PhysioAINative
+      # Foundation-only V8 evidence core. The app compiles this exact source;
+      # another Swift/iOS host can use the adjacent Swift Package directly.
+      - path: PhysioAIFaultEvidenceKit/Sources/PhysioAIFaultEvidenceKit
+      - path: Resources/Models/pose_landmarker_lite.task
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/pose_landmarker_full.task
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/hand_landmarker.task
+        type: file
+        buildPhase: resources
+      # V7 experimental bottle localization baseline. This is the official
+      # MediaPipe EfficientDet-Lite0 COCO model; it is not a Roboflow-trained
+      # bottle-specific model or a performance claim.
+      - path: Resources/Models/efficientdet_lite0.tflite
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/efficientdet_lite0.manifest.json
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/bottle_grab_v7_ai_module.manifest.json
+        type: file
+        buildPhase: resources
+      # Frozen PhaseNet V2 phase-only sidecar. The source contract and hash
+      # are bundled alongside the raw Float32 weights for local verification.
+      - path: Resources/Models/phasenet_v2_browser_weights.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/phasenet_v2_browser_runtime.contract.json
+        type: file
+        buildPhase: resources
+      # V7.2 Sit-to-Stand Pose-only native PhaseNet export. The parallel
+      # geometry counter and phase/comment path are separate in Swift.
+      - path: Resources/Models/causal_tcn_dilation_1__0.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/causal_tcn_dilation_1__1.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/residual_projection__0.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/residual_projection__1.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/causal_tcn_dilation_2__0.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/causal_tcn_dilation_2__1.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/causal_tcn_dilation_4__0.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/causal_tcn_dilation_4__1.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/phase_probabilities__0.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/phase_probabilities__1.f32
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/sit_to_stand_phasenet_v1_native.contract.json
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/sit_to_stand_front_normal_reference_profile_v1_expanded_development.json
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/sit_to_stand_v7_ai_module.manifest.json
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/native_v7_3_combined_ai_bundle.manifest.json
+        type: file
+        buildPhase: resources
+      # V8 local-only evidence contract. It contains no weights and authorizes
+      # neither persistence nor dashboard/LLM delivery.
+      - path: Resources/Models/native_v8_0_fault_evidence_local.manifest.json
+        type: file
+        buildPhase: resources
+      - path: Resources/Models/README.txt
+        type: file
+        buildPhase: resources
+    dependencies:
+      - package: Supabase
+      - package: WebRTC
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.physioai.patient.bottlegrabqa
+        INFOPLIST_FILE: PhysioAINative/Info.plist
+        # Empty by default in the public template. Configure only a backend
+        # endpoint you own; fixture mode works without one.
+        PHYSIOAI_API_BASE_URL: ""
+        SUPABASE_URL: ""
+        SUPABASE_PUBLISHABLE_KEY: ""
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_EMIT_LOC_STRINGS: "YES"
+
+  PhysioAINativeTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: NativeTests
+        excludes:
+          - Fixtures
+      - path: NativeTests/Fixtures
+        buildPhase: resources
+    dependencies:
+      - target: PhysioAINative
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.physioai.patient.bottlegrabqa.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/PhysioAINative.app/PhysioAINative"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        # CocoaPods propagates SDK-specific -force_load graph archives even
+        # with inherit! :search_paths. The app host already contains them.
+        "OTHER_LDFLAGS[sdk=iphonesimulator*]": ""
+        "OTHER_LDFLAGS[sdk=iphoneos*]": ""
+        # XCTest imports the app module, whose Swiftmodule records
+        # MediaPipeTasksVision as a dependency. Search paths are enough for
+        # module resolution; do not link the pod into the test bundle or
+        # MediaPipe's global calculators are loaded twice at runtime.
+        FRAMEWORK_SEARCH_PATHS: >-
+          $(inherited)
+          "$(PROJECT_DIR)/Pods/MediaPipeTasksCommon/frameworks"
+          "$(PROJECT_DIR)/Pods/MediaPipeTasksVision/frameworks"
+          "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XCFrameworkIntermediates/MediaPipeTasksCommon"
+          "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/XCFrameworkIntermediates/MediaPipeTasksVision"
+
+schemes:
+  PhysioAINative:
+    build:
+      targets:
+        PhysioAINative: all
+        PhysioAINativeTests: [test]
+    test:
+      targets:
+        - name: PhysioAINativeTests

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhysioAI · Local Rule JSON Visualizer</title>
+  <style>
+    :root { color-scheme: light dark; --bg:#f5f1e8; --surface:#fffdf8; --ink:#1c2f2a; --muted:#68746e; --line:#ded8cb; --brand:#244c44; --good:#237a57; --warn:#b87519; --bad:#b8423c; --soft:#e8f0ea; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.45 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { max-width:1040px; margin:0 auto; padding:24px; }
+    h1 { margin:0; font-size:clamp(25px,5vw,38px); letter-spacing:-.04em; }
+    h2 { margin:0; font-size:18px; }
+    p { color:var(--muted); margin:7px 0 0; }
+    .notice { margin:20px 0; padding:12px 14px; border-left:4px solid var(--warn); background:color-mix(in srgb, var(--warn) 10%, var(--surface)); color:var(--ink); border-radius:8px; }
+    .controls, .panel { border:1px solid var(--line); background:var(--surface); border-radius:16px; padding:18px; }
+    .controls { display:grid; gap:12px; }
+    .drop { display:grid; place-items:center; min-height:110px; border:2px dashed color-mix(in srgb, var(--brand) 40%, var(--line)); border-radius:12px; color:var(--brand); font-weight:700; text-align:center; padding:16px; cursor:pointer; }
+    .drop.drag { background:var(--soft); border-color:var(--brand); }
+    .row { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    button, .file-label { border:0; border-radius:10px; padding:10px 13px; min-height:44px; font:inherit; font-weight:700; cursor:pointer; }
+    button.primary { color:#fff; background:var(--brand); }
+    button.secondary, .file-label { color:var(--brand); background:var(--soft); }
+    input[type=file] { display:none; }
+    textarea { width:100%; min-height:132px; resize:vertical; border:1px solid var(--line); border-radius:10px; padding:12px; font:13px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color:var(--ink); background:color-mix(in srgb, var(--surface) 92%, var(--bg)); }
+    .error { color:var(--bad); font-weight:700; min-height:1.4em; }
+    #results { display:grid; gap:16px; margin-top:20px; }
+    .hidden { display:none !important; }
+    .metric-grid { display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:10px; }
+    .metric { border:1px solid var(--line); border-radius:12px; padding:13px; min-height:100px; }
+    .metric .label { color:var(--muted); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+    .metric .value { margin-top:7px; font-size:30px; line-height:1; font-weight:800; font-variant-numeric:tabular-nums; }
+    .correct .value { color:var(--good); }.incorrect .value { color:var(--bad); }.cannot .value { color:var(--warn); }
+    .split { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .bars { display:grid; gap:10px; margin-top:12px; }
+    .bar-row { display:grid; grid-template-columns:minmax(100px, 1fr) 4fr 36px; gap:10px; align-items:center; }
+    .track { height:10px; overflow:hidden; background:color-mix(in srgb, var(--line) 50%, transparent); border-radius:99px; }.fill { height:100%; background:var(--brand); border-radius:inherit; }.fill.bad { background:var(--bad); }.fill.warn { background:var(--warn); }
+    .table-wrap { overflow-x:auto; margin-top:12px; }.table-wrap table { border-collapse:collapse; width:100%; min-width:700px; }.table-wrap th,.table-wrap td { padding:10px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }.table-wrap th { color:var(--muted); font-size:12px; letter-spacing:.06em; text-transform:uppercase; }.status { display:inline-block; padding:3px 8px; border-radius:999px; font-size:12px; font-weight:800; }.status.correct { color:var(--good); background:color-mix(in srgb, var(--good) 12%, transparent); }.status.incorrect { color:var(--bad); background:color-mix(in srgb, var(--bad) 12%, transparent); }.status.cannot_assess,.status.incomplete { color:var(--warn); background:color-mix(in srgb, var(--warn) 12%, transparent); }
+    .metadata { display:grid; grid-template-columns:auto 1fr; gap:7px 14px; font-size:14px; margin-top:12px; }.metadata dt { color:var(--muted); }.metadata dd { margin:0; overflow-wrap:anywhere; }
+    @media (max-width:720px) { main { padding:16px; }.metric-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }.metric:first-child { grid-column:span 2; }.split { grid-template-columns:1fr; }.bar-row { grid-template-columns:minmax(90px,1fr) 3fr 30px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Rule-based result visualizer</h1>
+    <p>Local-only viewer for App V8 Bottle Grab and Sit-to-Stand result JSON.</p>
+    <div class="notice">Experimental rule evidence only. “Incorrect” means a qualified visible-fault rule fired; it is not a clinical judgement.</div>
+
+    <section class="controls" aria-label="Load rule-based session JSON">
+      <label id="drop-zone" class="drop" for="file-input">Drop a V8 rule-result JSON here or choose a file</label>
+      <input id="file-input" type="file" accept="application/json,.json">
+      <div class="row"><button id="load-example" class="secondary" type="button">Load example</button><button id="read-text" class="primary" type="button">Read pasted JSON</button></div>
+      <textarea id="json-input" aria-label="Paste rule-based session JSON" placeholder="Paste exported JSON here"></textarea>
+      <div id="error" class="error" role="alert" aria-live="polite"></div>
+    </section>
+
+    <section id="results" class="hidden" aria-live="polite">
+      <div class="panel"><h2>Session measurement</h2><div id="metrics" class="metric-grid"></div></div>
+      <div class="split">
+        <div class="panel"><h2>Incorrect reps by body region</h2><div id="regions" class="bars"></div></div>
+        <div class="panel"><h2>Incorrect reps by rule severity</h2><div id="severities" class="bars"></div></div>
+      </div>
+      <div class="panel"><h2>Per-repetition evidence</h2><div class="table-wrap"><table><thead><tr><th>Rep</th><th>Outcome</th><th>Fault tags</th><th>Body region</th><th>Rule severity</th><th>Coverage</th></tr></thead><tbody id="repetition-body"></tbody></table></div></div>
+      <div class="panel"><h2>Contract</h2><dl id="metadata" class="metadata"></dl></div>
+    </section>
+  </main>
+
+  <script type="module">
+    import {
+      RULE_BASED_SESSION_SCHEMA as SCHEMA,
+      readRuleBasedSessionJSON,
+    } from './rule-json-reader.mjs';
+
+    const $ = (id) => document.getElementById(id);
+    const examples = {
+      schema: SCHEMA, moduleID: 'bottle_grab_rule_based_session_v8_local', moduleVersion: '0.1.0-dev', exerciseID: 'bottle_grab', trackingProfile: 'pose_plus_hand', anatomicalSide: 'left', decisionScope: 'experimental_rule_based_visible_faults',
+      summary: { totalReps: 3, correctRepCount: 1, incorrectRepCount: 1, cannotAssessRepCount: 1, incompleteRepCount: 0, wrongByBodyRegion: { left_hand: 1 }, wrongBySeverity: { medium: 1 } },
+      repetitions: [
+        { id:'rep_1', repIndex:1, outcome:'correct', faultTags:[], bodyRegions:[], severity:null, assessableFrameCount:8, skippedFrameCount:0, skippedReasonCounts:{}, faultSignals:[] },
+        { id:'rep_2', repIndex:2, outcome:'incorrect', faultTags:['incomplete_visible_finger_wrap'], bodyRegions:['left_hand'], severity:'medium', assessableFrameCount:9, skippedFrameCount:0, skippedReasonCounts:{}, faultSignals:[{ kind:'fault_observation', semanticID:'incomplete_visible_finger_wrap', bodyRegion:'left_hand', landmarkRefs:['hand_5'], metric:{name:'rule',value:1,unit:'boolean'}, severity:'medium', confidence:.75, sourceEngine:'local_rule' }] },
+        { id:'rep_3', repIndex:3, outcome:'cannot_assess', faultTags:[], bodyRegions:[], severity:null, assessableFrameCount:1, skippedFrameCount:4, skippedReasonCounts:{missing_hand:4}, faultSignals:[] }
+      ],
+      claimBoundary: { experimental:true, clinicalDecision:false, patientFacingApproved:false, rawMediaPersisted:false, rawLandmarksPersisted:false }
+    };
+    function clear(node) { node.replaceChildren(); }
+    function element(tag,text='',className='') { const el=document.createElement(tag); el.textContent=text; if(className)el.className=className; return el; }
+    function bars(target, source, tone) { clear(target); const pairs=Object.entries(source||{}).filter(([,n])=>Number.isFinite(n)&&n>0).sort((a,b)=>b[1]-a[1]); if(!pairs.length){target.append(element('p','None recorded.'));return;} const max=Math.max(...pairs.map(([,n])=>n)); for(const [label,count] of pairs){ const row=document.createElement('div');row.className='bar-row';row.append(element('span',label)); const track=document.createElement('div');track.className='track';const fill=document.createElement('div');fill.className=`fill ${tone||''}`;fill.style.width=`${Math.max(4,(count/max)*100)}%`;track.append(fill);row.append(track,element('strong',String(count)));target.append(row); } }
+    function render(record) { const s=record.summary; const metrics=$('metrics');clear(metrics); const data=[['Total',s.totalReps,''],['Correct',s.correctRepCount,'correct'],['Incorrect',s.incorrectRepCount,'incorrect'],['Cannot assess',s.cannotAssessRepCount,'cannot'],['Incomplete',s.incompleteRepCount,'']]; for(const [label,value,tone] of data){const card=document.createElement('div');card.className=`metric ${tone}`;card.append(element('div',label,'label'),element('div',String(value),'value'));metrics.append(card);} bars($('regions'),s.wrongByBodyRegion,'bad');bars($('severities'),s.wrongBySeverity,'warn'); const body=$('repetition-body');clear(body); for(const rep of record.repetitions){const tr=document.createElement('tr'); const cells=[String(rep.repIndex),rep.outcome,(rep.faultTags||[]).join(', ')||'—',(rep.bodyRegions||[]).join(', ')||'—',rep.severity||'—',`${rep.assessableFrameCount||0} assessable · ${rep.skippedFrameCount||0} skipped`]; cells.forEach((value,index)=>{const td=document.createElement('td'); if(index===1)td.append(element('span',value,`status ${rep.outcome}`)); else td.textContent=value;tr.append(td);});body.append(tr);} const meta=$('metadata');clear(meta); const fields=[['Schema',record.schema],['Engine',`${record.moduleID} @ ${record.moduleVersion}`],['Exercise',`${record.exerciseID} · ${record.trackingProfile} · ${record.anatomicalSide}`],['Decision scope',record.decisionScope],['Claim boundary',record.claimBoundary?.experimental?'Experimental local rule evidence; not clinical':'Unknown']];for(const [term,value] of fields){meta.append(element('dt',term),element('dd',value));} $('results').classList.remove('hidden'); }
+    function read(text) { const error=$('error');error.textContent='';const result=readRuleBasedSessionJSON(text);if(!result.valid){error.textContent=result.errors.join(' ');$('results').classList.add('hidden');return;}render(result.record); }
+    $('read-text').addEventListener('click',()=>read($('json-input').value)); $('load-example').addEventListener('click',()=>{const text=JSON.stringify(examples,null,2);$('json-input').value=text;read(text);}); $('file-input').addEventListener('change',(event)=>{const file=event.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{const text=String(reader.result||'');$('json-input').value=text;read(text);};reader.readAsText(file);}); const drop=$('drop-zone');['dragenter','dragover'].forEach(type=>drop.addEventListener(type,(event)=>{event.preventDefault();drop.classList.add('drag');}));['dragleave','drop'].forEach(type=>drop.addEventListener(type,(event)=>{event.preventDefault();drop.classList.remove('drag');}));drop.addEventListener('drop',(event)=>{const file=event.dataTransfer?.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{const text=String(reader.result||'');$('json-input').value=text;read(text);};reader.readAsText(file);});
+  </script>
+</body>
+</html>

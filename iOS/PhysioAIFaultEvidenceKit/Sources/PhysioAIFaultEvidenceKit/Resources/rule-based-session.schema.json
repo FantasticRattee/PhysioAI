@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://physioai.local/schemas/rule-based-bottle-grab-session-v1.json",
+  "title": "PhysioAI Rule-Based Bottle Grab Session",
+  "description": "Local derived repetition evidence. It excludes raw video, raw landmarks, pixel coordinates, and patient identifiers.",
+  "type": "object",
+  "required": ["schema", "moduleID", "moduleVersion", "exerciseID", "trackingProfile", "anatomicalSide", "decisionScope", "summary", "repetitions", "claimBoundary"],
+  "properties": {
+    "schema": { "const": "physioai.rule_based_bottle_grab_session.v1" },
+    "moduleID": { "type": "string" },
+    "moduleVersion": { "type": "string" },
+    "exerciseID": { "const": "bottle_grab" },
+    "trackingProfile": { "const": "pose_plus_hand" },
+    "anatomicalSide": { "const": "left" },
+    "decisionScope": { "const": "experimental_rule_based_visible_faults" },
+    "summary": { "$ref": "#/$defs/summary" },
+    "repetitions": { "type": "array", "items": { "$ref": "#/$defs/repetition" } },
+    "claimBoundary": { "$ref": "#/$defs/claimBoundary" }
+  },
+  "$defs": {
+    "summary": {
+      "type": "object",
+      "required": ["totalReps", "correctRepCount", "incorrectRepCount", "cannotAssessRepCount", "incompleteRepCount", "wrongByBodyRegion", "wrongBySeverity"],
+      "properties": {
+        "totalReps": { "type": "integer", "minimum": 0 },
+        "correctRepCount": { "type": "integer", "minimum": 0 },
+        "incorrectRepCount": { "type": "integer", "minimum": 0 },
+        "cannotAssessRepCount": { "type": "integer", "minimum": 0 },
+        "incompleteRepCount": { "type": "integer", "minimum": 0 },
+        "wrongByBodyRegion": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "wrongBySeverity": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+      },
+      "additionalProperties": false
+    },
+    "repetition": {
+      "type": "object",
+      "required": ["id", "repIndex", "outcome", "faultTags", "bodyRegions", "severity", "assessableFrameCount", "skippedFrameCount", "skippedReasonCounts", "faultSignals"],
+      "properties": {
+        "id": { "type": "string" },
+        "repIndex": { "type": "integer", "minimum": 1 },
+        "outcome": { "enum": ["correct", "incorrect", "cannot_assess", "incomplete"] },
+        "faultTags": { "type": "array", "items": { "type": "string" } },
+        "bodyRegions": { "type": "array", "items": { "type": "string" } },
+        "severity": { "type": ["string", "null"] },
+        "assessableFrameCount": { "type": "integer", "minimum": 0 },
+        "skippedFrameCount": { "type": "integer", "minimum": 0 },
+        "skippedReasonCounts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "faultSignals": { "type": "array", "items": { "$ref": "#/$defs/signal" } }
+      },
+      "additionalProperties": false
+    },
+    "signal": {
+      "type": "object",
+      "required": ["kind", "semanticID", "bodyRegion", "landmarkRefs", "metric", "severity", "confidence", "sourceEngine"],
+      "properties": {
+        "kind": { "const": "fault_observation" },
+        "semanticID": { "type": "string" },
+        "bodyRegion": { "type": "string" },
+        "landmarkRefs": { "type": "array", "items": { "type": "string" } },
+        "metric": { "type": "object", "required": ["name", "value", "unit"], "additionalProperties": false, "properties": { "name": { "type": "string" }, "value": { "type": "number" }, "unit": { "type": "string" } } },
+        "severity": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "sourceEngine": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "claimBoundary": {
+      "type": "object",
+      "required": ["experimental", "clinicalDecision", "patientFacingApproved", "rawMediaPersisted", "rawLandmarksPersisted"],
+      "properties": {
+        "experimental": { "const": true },
+        "clinicalDecision": { "const": false },
+        "patientFacingApproved": { "const": false },
+        "rawMediaPersisted": { "const": false },
+        "rawLandmarksPersisted": { "const": false }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

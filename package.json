@@ -1,0 +1,12 @@
+{
+  "name": "physioai-final",
+  "version": "0.12.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "npm --prefix TherapistWeb ci && npm --prefix TherapistWeb run build",
+    "start": "npm --prefix TherapistWeb run start"
+  }
+}

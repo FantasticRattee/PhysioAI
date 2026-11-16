@@ -1,0 +1,32 @@
+{
+  "schema": "physioai.native_v7_3_combined_ai_bundle.v1",
+  "bundleId": "native_bottle_grab_sit_to_stand_v7_3_ai_bundle",
+  "bundleVersion": "7.3.6-sit-to-stand-pose-wrist-gate-dev",
+  "status": "experimental_local_device",
+  "branch": "codex/app-v7-3-6-sit-to-stand-presence-gate",
+  "exercises": ["bottle_grab", "sit_to_stand"],
+  "exerciseModules": {
+    "bottle_grab": {
+      "moduleId": "bottle_grab_v7_ai_module",
+      "baselineId": "bottle_grab_native_v7_ai_module_baseline_5",
+      "sourceVersion": "v7.1_tts_fix",
+      "behaviorChange": true
+    },
+    "sit_to_stand": {
+      "moduleId": "sit_to_stand_v7_ai_module",
+      "sourceVersion": "v7.3.6_sit_to_stand_pose_wrist_gate",
+      "behaviorChange": true
+    }
+  },
+  "presentation": {
+    "ttsCoordinator": "NativeSpeechCommentCoordinator",
+    "speechController": "NativeSpeechController",
+    "scope": "shared_exercise_presentation_only",
+    "bottleGrabPolicy": "v7_1_one_active_one_latest_pending_cooldown_and_stale_expiry",
+    "behaviorChange": false
+  },
+  "cloudInference": false,
+  "appIntegrationAuthorized": false,
+  "patientFacingApproved": false,
+  "clinicalApproved": false
+}

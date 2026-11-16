@@ -1,0 +1,100 @@
+{
+  "schema": "physioai.native_fault_evidence_local.v1",
+  "appVersion": "8.0.15",
+  "portedEngineVersion": "8.0.12",
+  "moduleId": "native_fault_evidence_v8_local",
+  "moduleVersion": "0.3.0-dev",
+  "status": "experimental_local_only",
+  "parentSource": {
+    "appVersion": "7.3.6",
+    "commit": "7c1f199271f52035c51a894220a7348081691ef3",
+    "branch": "codex/app-v7-3-6-sit-to-stand-presence-gate"
+  },
+  "storage": "process_memory_only",
+  "dashboardConnected": false,
+  "llmConnected": false,
+  "backendConnected": false,
+  "rawMediaPersisted": false,
+  "rawLandmarksPersisted": false,
+  "portablePackage": {
+    "name": "PhysioAIFaultEvidenceKit",
+    "path": "Patient/native-ios/PhysioAIFaultEvidenceKit",
+    "scope": "Foundation-only derived JSON contract; no camera, MediaPipe, model, or network dependency"
+  },
+  "ruleBasedSession": {
+    "schema": "physioai.rule_based_bottle_grab_session.v1",
+    "moduleId": "bottle_grab_rule_based_session_v8_local",
+    "moduleVersion": "0.1.0-dev",
+    "storage": "process_memory_until_user_export",
+    "delivery": "user-initiated temporary JSON file plus iOS share sheet; no Dashboard, backend, Railway, LLM, or automatic persistence",
+    "export": {
+      "trigger": "Debug V8 session-summary action after at least one completed repetition",
+      "destination": "user-selected Files, AirDrop, or share-sheet destination",
+      "validation": "decode known RuleBasedSessionRecord and reconcile summary with repetition rows before file creation",
+      "rawMediaIncluded": false,
+      "rawLandmarksIncluded": false,
+      "patientIdentifierIncluded": false
+    },
+    "hostBoundary": "host owns MediaPipe, Capture-QC and completed rep boundaries; package aggregates qualified derived fault signals",
+    "supportedFaultTags": ["incomplete_visible_finger_wrap"],
+    "severityMeaning": "rule-evidence severity only; not clinical severity",
+    "correctnessMeaning": "experimental visible-fault rule outcome only; cannot_assess is separate from incorrect"
+  },
+  "sitToStandRuleBasedSession": {
+    "schema": "physioai.rule_based_sit_to_stand_session.v1",
+    "moduleId": "sit_to_stand_rule_based_evidence_v1",
+    "moduleVersion": "1.0.0-dev",
+    "trackingProfile": "pose_only",
+    "anatomicalSide": "bilateral",
+    "decisionScope": "experimental_rule_based_visible_form",
+    "storage": "process_memory_until_user_export",
+    "delivery": "user-initiated temporary JSON file plus iOS share sheet; adapter-ready but not uploaded",
+    "schemaResource": "PhysioAIFaultEvidenceKit/Sources/PhysioAIFaultEvidenceKit/Resources/sit-to-stand-rule-based-session.schema.json",
+    "hostBoundary": "host owns MediaPipe, Pose admission, geometry counter and completed rep boundaries; observer aggregates only qualified derived Pose geometry signals",
+    "supportedFaultTags": ["trunk_view_plane_tilt", "trunk_lateral_offset", "hip_left_right_asymmetry", "knee_left_right_asymmetry", "foot_base_offset"],
+    "severityMeaning": "development rule-evidence severity only; not clinical severity",
+    "correctnessMeaning": "experimental visible-form outcome only; cannot_assess is separate from incorrect"
+  },
+  "sitToStandCounterCalibration": {
+    "version": "8.0.15",
+    "scope": "geometry_counter_only",
+    "observation": "image_plane_bilateral_leg_ratios_without_depth",
+    "seatedMaximumMeanThighShinRatio": 0.55,
+    "standingMinimumMeanThighShinRatio": 0.85,
+    "baselineRiseMinimumInShins": 0.25,
+    "standingHoldMinimumMs": 200,
+    "changesPhaseNet": false,
+    "changesGuidedStartTTS": true,
+    "changesFaultEvidenceRules": false,
+    "clinicalThreshold": false
+  },
+  "planDoseExecution": {
+    "scope": "selected native rep-count plan item only for Bottle Grab and Sit-to-Stand; extras remain manual development practice",
+    "source": "NativePlanItem.reps and NativePlanItem.sets",
+    "completion": "one-shot local Summary transition when counter-owned total reaches reps × sets",
+    "counterAdmission": "host pauses further counting before exercise-specific final evidence preparation; V8.0.15 Sit-to-Stand counter calibration is declared separately; model weights and PhaseNet features retain their provenance",
+    "evidenceFinalization": "Bottle Grab allows a brief Hand-callback grace period; Sit-to-Stand finalizes only completed geometry-counter repetitions without inventing a fault",
+    "export": "Debug Summary user action only; no automatic file sharing or backend/dashboard delivery"
+  },
+  "postSessionScoring": {
+    "scorer": "NativeRuleBasedSessionScorerV13",
+    "scorerVersion": "1.0.0",
+    "scope": "experimental per-exercise rule feedback for bottle_grab and sit_to_stand",
+    "inputs": "validated completed-repetition RuleBasedSessionRecord plus counter-owned completed-repetition total for coverage denominator",
+    "sessionAggregateDelivery": "overall_score, pose_score, and invalid_reps use the existing exercise_sessions save path; motion_score remains null",
+    "localOnlyMetrics": ["consistency", "evidence_coverage", "fault_breakdown", "per_repetition_score"],
+    "detailedEvidenceDelivery": "not connected to Dashboard, backend, Railway, or LLM",
+    "clinicalScore": false
+  },
+  "initialEvidenceSource": {
+    "cueId": "BG_REF_WRAP_FINGERS_MORE",
+    "recordKind": "comment_observation",
+    "semanticId": "finger_wrap_incomplete",
+    "bodyRegion": "left_hand",
+    "sourceEngine": "experimental_rule_wrap_policy_subset_native"
+  },
+  "faultObservations": "reserved_for_future_fault_producing_engine_outputs",
+  "clinicalApproved": false,
+  "patientFacingApproved": false,
+  "appIntegrationAuthorized": true
+}

@@ -1,0 +1,13 @@
+-r requirements.txt
+tf-keras==2.17.0
+tensorflow-hub==0.16.1
+jax==0.4.34
+jaxlib==0.4.34
+scipy==1.14.1
+packaging==23.2
+six==1.17.0
+coremltools==8.3.0
+# Install the SavedModel converter separately, as documented in ../README.md:
+# python -m pip install --no-deps tensorflowjs==4.22.0
+# JAX is required by the converter's imports; the pipeline uses SavedModel.
+# The optional decision-forest dependency would change the TensorFlow version.

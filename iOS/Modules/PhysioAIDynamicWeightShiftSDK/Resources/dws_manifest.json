@@ -1,0 +1,229 @@
+{
+  "name": "motion-tcn",
+  "version": "cust_dynamic_weight_shifts-left-tcn-v3",
+  "modelPath": "./model.json",
+  "exerciseId": "cust_dynamic_weight_shifts",
+  "cameraView": "front",
+  "landmarkSchemaId": "seated_balance.v2",
+  "bodyRegion": "seated_balance",
+  "modelInputLandmarks": [
+    "left_shoulder",
+    "right_shoulder",
+    "left_hip",
+    "right_hip"
+  ],
+  "primaryRequiredLandmarks": [
+    "left_shoulder",
+    "right_shoulder",
+    "left_hip",
+    "right_hip"
+  ],
+  "stabilizerRequiredLandmarks": [
+    "left_knee",
+    "right_knee",
+    "left_ankle",
+    "right_ankle",
+    "left_wrist",
+    "right_wrist"
+  ],
+  "jointNames": [],
+  "inputShape": [
+    30,
+    23
+  ],
+  "motionFeatureSchemaVersion": 2,
+  "windowPadding": "repeat_first",
+  "phases": [
+    "rest",
+    "target"
+  ],
+  "qualities": [
+    "correct_left",
+    "wrong_left"
+  ],
+  "targetOutcomePolicy": null,
+  "boundaryTraining": null,
+  "phasePurityThreshold": 0.8,
+  "phaseTrainingSamples": {
+    "total": 1759,
+    "active": 1069,
+    "masked": 690
+  },
+  "phaseFeatureMode": "full_motion_tcn",
+  "qualityTrainingPhases": [
+    "target"
+  ],
+  "qualityDecisionMode": "binary_form_screen_left",
+  "featureContract": "shoulder_hip_torso_geometry.v2",
+  "derivedFeatureContract": "dynamic_weight_shifts_torso_geometry.v1",
+  "derivedFeatureNames": [
+    "shoulder_line_tilt_from_horizontal",
+    "left_hip_to_shoulder_lean_from_vertical",
+    "right_hip_to_shoulder_lean_from_vertical",
+    "hip_center_to_shoulder_center_lean_from_vertical",
+    "left_hip_to_shoulder_length",
+    "right_hip_to_shoulder_length",
+    "hip_to_shoulder_length_delta"
+  ],
+  "formGeometryContract": {
+    "version": "screen_torso_form.v1",
+    "shoulderLine": "two_shoulders_parallel_to_screen_horizontal",
+    "torsoLean": "same_screen_side_hip_to_shoulder_from_vertical",
+    "correctTarget": "shoulder_line_level_while_torso_axis_leans_toward_target",
+    "excludedJointAngle": "shoulder_hip_knee",
+    "excludedTranslation": "absolute_hip_center_motion",
+    "normalizationAnchor": "hip_center_per_frame"
+  },
+  "classContract": "dynamic_weight_shifts_form_screen_left.v1",
+  "trainingDirection": "left",
+  "trainingPhasePolicy": {
+    "correct": [
+      "rest",
+      "target"
+    ],
+    "wrong": [
+      "target"
+    ]
+  },
+  "formEvaluationPhases": [
+    "target"
+  ],
+  "exposeHeadConfidences": true,
+  "augmentationPolicy": {
+    "mirrorX": false,
+    "syntheticRows": "train_only_same_source_lineage"
+  },
+  "splitCoverage": {
+    "train": {
+      "rows": 89,
+      "classes": {
+        "correct_left": 59,
+        "wrong_left": 30
+      }
+    },
+    "validation": {
+      "rows": 2,
+      "classes": {
+        "correct_left": 1,
+        "wrong_left": 1
+      }
+    },
+    "test": {
+      "rows": 2,
+      "classes": {
+        "correct_left": 1,
+        "wrong_left": 1
+      }
+    }
+  },
+  "evaluation": {
+    "sampleCount": 33,
+    "qualitySampleCount": 26,
+    "stablePhaseSampleCount": 21,
+    "transitionPhaseSampleCount": 12,
+    "evaluatedSplit": "test",
+    "phaseAccuracy": 0.9090909090909091,
+    "phaseMacroF1": 0.8811524609843937,
+    "stablePhaseAccuracy": 1.0,
+    "stablePhaseMacroF1": 1.0,
+    "qualityDecisionThreshold": 0.5,
+    "qualityAccuracy": 1.0,
+    "qualityMacroF1": 1.0,
+    "perLabelRecall": {
+      "correct_left": 1.0,
+      "wrong_left": 1.0
+    },
+    "perLabelQualityMetrics": {
+      "correct_left": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 14
+      },
+      "wrong_left": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 12
+      }
+    },
+    "falseGoodRate": 0.0,
+    "phaseConfusionMatrix": {
+      "rest": {
+        "rest": 7,
+        "target": 0
+      },
+      "target": {
+        "rest": 3,
+        "target": 23
+      }
+    },
+    "stablePhaseConfusionMatrix": {
+      "rest": {
+        "rest": 7,
+        "target": 0
+      },
+      "target": {
+        "rest": 0,
+        "target": 14
+      }
+    },
+    "qualityConfusionMatrix": {
+      "correct_left": {
+        "correct_left": 14,
+        "wrong_left": 0
+      },
+      "wrong_left": {
+        "correct_left": 0,
+        "wrong_left": 12
+      }
+    },
+    "rawArgmaxQuality": {
+      "accuracy": 1.0,
+      "macroF1": 1.0,
+      "perLabelRecall": {
+        "correct_left": 1.0,
+        "wrong_left": 1.0
+      },
+      "falseGoodRate": 0.0,
+      "confusionMatrix": {
+        "correct_left": {
+          "correct_left": 14,
+          "wrong_left": 0
+        },
+        "wrong_left": {
+          "correct_left": 0,
+          "wrong_left": 12
+        }
+      }
+    }
+  },
+  "approval": {
+    "ok": true,
+    "issues": [],
+    "decision": "production_approval",
+    "approvedAt": "2026-08-31T00:00:00.000Z",
+    "approvedBy": "product_owner",
+    "acceptedEvaluationIssues": [],
+    "criteria": {
+      "phaseAccuracy": 0.9,
+      "qualityAccuracy": 0.85,
+      "qualityMacroF1": 0.75,
+      "perLabelRecall": 0.75,
+      "falseGoodRate": 0.05,
+      "targetBoundaryConfidentRecall": 0.85,
+      "targetBoundaryFalseReachedRate": 0.1
+    }
+  },
+  "approved": true,
+  "validationOnly": false,
+  "deploymentStatus": "production",
+  "modelFormat": "tfjs-graph-model",
+  "architectureId": "dynamic_weight_shifts_left_tcn.v1",
+  "architectureVersion": 1,
+  "qualityDecisionThreshold": 0.5,
+  "outputMap": {
+    "phase": "Identity:0",
+    "quality": "Identity_1:0"
+  }
+}

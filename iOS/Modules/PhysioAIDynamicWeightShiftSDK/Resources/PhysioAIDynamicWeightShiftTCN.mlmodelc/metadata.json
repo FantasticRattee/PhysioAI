@@ -1,0 +1,94 @@
+[
+  {
+    "shortDescription" : "On-device TCN phase and form inference for seated Dynamic Weight Shifts.",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32 1 × 2)",
+        "shortDescription" : "",
+        "shape" : "[1, 2]",
+        "name" : "Identity",
+        "type" : "MultiArray"
+      },
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32 1 × 2)",
+        "shortDescription" : "",
+        "shape" : "[1, 2]",
+        "name" : "Identity_1",
+        "type" : "MultiArray"
+      }
+    ],
+    "version" : "cust_dynamic_weight_shifts-left-tcn-v3",
+    "modelParameters" : [
+
+    ],
+    "author" : "PhysioAI",
+    "specificationVersion" : 8,
+    "storagePrecision" : "Float32",
+    "mlProgramOperationTypeHistogram" : {
+      "Ios17.mul" : 36,
+      "Ios17.square" : 9,
+      "Ios17.transpose" : 27,
+      "Ios17.sub" : 9,
+      "Ios17.rsqrt" : 9,
+      "Ios17.conv" : 9,
+      "Ios17.linear" : 3,
+      "Ios17.concat" : 1,
+      "Ios17.add" : 31,
+      "Ios16.reduceMean" : 19,
+      "Ios17.sliceByIndex" : 1,
+      "Ios16.relu" : 13,
+      "Ios16.softmax" : 2,
+      "Ios16.reduceMax" : 1,
+      "Ios17.reshape" : 25,
+      "Crop" : 4,
+      "Pad" : 8
+    },
+    "computePrecision" : "Mixed (Float32, Int32)",
+    "stateSchema" : [
+
+    ],
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "14.0",
+      "tvOS" : "17.0",
+      "visionOS" : "1.0",
+      "watchOS" : "10.0",
+      "iOS" : "17.0",
+      "macCatalyst" : "17.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_mlProgram"
+    },
+    "inputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Float32",
+        "formattedType" : "MultiArray (Float32 1 × 30 × 23)",
+        "shortDescription" : "",
+        "shape" : "[1, 30, 23]",
+        "name" : "motion_window",
+        "type" : "MultiArray"
+      }
+    ],
+    "userDefinedMetadata" : {
+      "com.physioai.motionFeatureSchemaVersion" : "2",
+      "com.physioai.phaseLabels" : "[\"rest\", \"target\"]",
+      "com.github.apple.coremltools.source" : "tensorflow==2.17.1",
+      "com.github.apple.coremltools.version" : "8.3.0",
+      "com.physioai.windowPadding" : "repeat_first",
+      "com.physioai.exerciseId" : "cust_dynamic_weight_shifts",
+      "com.physioai.qualityLabels" : "[\"correct_left\", \"wrong_left\"]",
+      "com.physioai.landmarkSchemaId" : "seated_balance.v2"
+    },
+    "generatedClassName" : "PhysioAIDynamicWeightShiftTCN",
+    "method" : "predict"
+  }
+]
